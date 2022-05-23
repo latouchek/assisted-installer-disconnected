@@ -24,7 +24,7 @@ data:
   POSTGRESQL_DATABASE: installer
   POSTGRESQL_PASSWORD: admin
   POSTGRESQL_USER: admin
-  PUBLIC_CONTAINER_REGISTRIES: 'quay.io,kvm-hetzner.mb-ocp-lab-1.mb.t-mobile.lab:8443'
-  RELEASE_IMAGES: '[{"openshift_version":"4.10","cpu_architecture":"x86_64","url":"kvm-hetzner.mb-ocp-lab-1.mb.t-mobile.lab:8443/ocp4/openshift4:4.10.14-x86_64","version":"4.10.14","default":true}]'
+  PUBLIC_CONTAINER_REGISTRIES: 'quay.io,kvm-hetzner.ocpd.lab.local:8443'
+  RELEASE_IMAGES: '[{"openshift_version":"4.10","cpu_architecture":"x86_64","url":"kvm-hetzner.ocpd.lab.local:8443/ocp4/openshift4:4.10.14-x86_64","version":"4.10.14","default":true}]'
   SERVICE_BASE_URL: http://$BASTIONIP:8090
   STORAGE: filesystem
