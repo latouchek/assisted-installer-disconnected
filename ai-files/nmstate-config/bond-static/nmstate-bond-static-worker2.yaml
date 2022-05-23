@@ -1,0 +1,58 @@
+dns-resolver:
+  config:
+    server:
+    - 10.145.145.97
+interfaces:
+- name: bond0 
+  description: Bond 
+  type: bond 
+  state: up 
+  ipv4: 
+    address:
+    - ip: 10.145.145.105
+      prefix-length: 27
+    enabled: true
+  link-aggregation:
+    mode: balance-rr 
+    options:
+      miimon: '140' 
+    port: 
+      - ens3
+      - ens4
+- name: ens3
+  state: up
+  type: ethernet
+- name: ens4
+  state: up
+  type: ethernet
+- name: ens5
+  type: ethernet
+  state: up
+  ipv4:
+    enabled: false
+    dhcp: false
+- name: linux-br0
+  description: Linux bridge with ens5 as a port
+  type: linux-bridge
+  state: up
+  ipv4:
+    enabled: false
+  bridge:
+    options:
+      group-forward-mask: 0
+      mac-ageing-time: 300
+      multicast-snooping: true
+      stp:
+        enabled: true
+        forward-delay: 15
+        hello-time: 2
+        max-age: 20
+        priority: 32768
+    port:
+      - name: ens5
+routes:
+  config:
+  - destination: 0.0.0.0/0
+    next-hop-address: 10.145.145.97
+    next-hop-interface: bond0
+    table-id: 254

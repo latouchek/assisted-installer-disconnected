@@ -1,0 +1,24 @@
+additionalTrustBundle: |
+  -----BEGIN CERTIFICATE-----
+  MIID1TCCAr2gAwIBAgIUS6u7ouuOiWrssz8qTAc7I4AcS3MwDQYJKoZIhvcNAQEL
+  BQAwdDELMAkGA1UEBhMCVVMxCzAJBgNVBAgMAlZBMREwDwYDVQQHDAhOZXcgWW9y
+  azENMAsGA1UECgwEUXVheTERMA8GA1UECwwIRGl2aXNpb24xIzAhBgNVBAMMGm1p
+  dx7NwzjLsHtkfYdI/iVKhKja/fGZq4x3ZCPp+6/IRVb+0VcTPGFx3Ccc7F6NmXDY
+  2mMPd3d7tFQbkr3o7TirmjlmOJ8umNcyGPOo0cr6i/miZ3OJo5exUoC3uVWKHl9L
+  Btybde6zH+SKrYN1P8zs9jAqdBHMWrvJVpEsXoOmSQIDAQABo18wXTALBgNVHQ8E
+  BAMCAuQwEwYDVR0lBAwwCgYIKwYBBQUHAwEwJQYDVR0RBB4wHIIabWlycm9yLW9j
+  cC5vY3BkLm51dGFyaC5sYWIwEgYDVR0TAQH/BAgwBgEB/wIBATANBgkqhkiG9w0B
+  AQsFAAOCAQEA3CKuuMYw316+xtvDKuVYMFSDpPoiU/pzBoDjh008SPCxMwgfo/z8
+  8vOR15pAreSV+gc/D4QlPdxRLg9Ms3jF/Y/8XsebD4uQWmeZurEdal9XHjdTzcWd
+  i01X4MWxNj7eBhM3rksJXMyJbirFysL/amOOHlv/Eyooa7XhVUXtAdIBj8b703tC
+  mUv/S2r4XKW8m1eIQwPtrAssoG3srgPGoOV7szP6O37GBqxHVP8WeVXqwN8GOLzO
+  E+jxunWME4+2TSFzQpnBRyvJqe3Xx1QSu/uFJY/o9NTlOzc8iz7ra85b1FeTni1x
+  4VtG1aYJ7+xhN4ogD3MbsxtbiYmRUqhE8g==
+  -----END CERTIFICATE-----
+imageContentSources:
+  - mirrors:
+    - $BASTIONFQDN:8443/ocp4/openshift4
+    source: quay.io/openshift-release-dev/ocp-release
+  - mirrors:
+    - $BASTIONFQDN:8443/ocp4/openshift4
+    source: quay.io/openshift-release-dev/ocp-v4.0-art-dev

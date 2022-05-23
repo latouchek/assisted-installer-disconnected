@@ -1,0 +1,38 @@
+dns-resolver:
+  config:
+    server:
+    - 10.145.145.97
+interfaces:
+- name: ens3
+  ipv4:
+    address:
+    - ip: 10.145.145.103
+      prefix-length: 27
+    dhcp: false
+    enabled: true
+  state: up
+  type: ethernet
+- name: ens4
+  state: down
+  ipv4:
+    enabled: false
+    dhcp: false
+  ipv6:
+    enabled: false
+    dhcp: false
+  type: ethernet
+- name: ens5
+  state: down
+  ipv4:
+    enabled: false
+    dhcp: false
+  ipv6:
+    enabled: false
+    dhcp: false
+  type: ethernet
+routes:
+  config:
+  - destination: 0.0.0.0/0
+    next-hop-address: 10.145.145.97
+    next-hop-interface: ens3
+    table-id: 254

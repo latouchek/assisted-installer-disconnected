@@ -1,0 +1,2159 @@
+additionalTrustBundle: |
+  -----BEGIN CERTIFICATE-----
+  MIID1TCCAr2gAwIBAgIUb0pmn662Xai4PYXSzL5BAoSr/HgwDQYJKoZIhvcNAQEL
+  BQAwdDELMAkGA1UEBhMCVVMxCzAJBgNVBAgMAlZBMREwDwYDVQQHDAhOZXcgWW9y
+  azENMAsGA1UECgwEUXVheTERMA8GA1UECwwIRGl2aXNpb24xIzAhBgNVBAMMGm1p
+  cnJvci1vY3Aub2NwZC5udXRhcmgubGFiMB4XDTIyMDUwMjE2NTcxOVoXDTI1MDIx
+  OTE2NTcxOVowdDELMAkGA1UEBhMCVVMxCzAJBgNVBAgMAlZBMREwDwYDVQQHDAhO
+  ZXcgWW9yazENMAsGA1UECgwEUXVheTERMA8GA1UECwwIRGl2aXNpb24xIzAhBgNV
+  BAMMGm1pcnJvci1vY3Aub2NwZC5udXRhcmgubGFiMIIBIjANBgkqhkiG9w0BAQEF
+  AAOCAQ8AMIIBCgKCAQEAxRzkKgu4fDK1HKPTgsuZ/yl9WYBTe1A+A+vNnfmgKEC5
+  XgrBaCB1h5MIcXLEHrnzqiEqV12PiJNaEaqzhtyppT8tbV0ObFsGb2cFIkLxlpgI
+  bkICYoaR7v1BN+3HSzJZ7MqWz1Z3xwCm3fMv0djmNCeYe6dwEkwJ77Tett0GJk8u
+  sS5h01SzGkH3IowinM8Vy3pNLIChqSZaEtYvjryTiwIDAQABo18wXTALBgNVHQ8E
+  BAMCAuQwEwYDVR0lBAwwCgYIKwYBBQUHAwEwJQYDVR0RBB4wHIIabWlycm9yLW9j
+  cC5vY3BkLm51dGFyaC5sYWIwEgYDVR0TAQH/BAgwBgEB/wIBATANBgkqhkiG9w0B
+  AQsFAAOCAQEApXqR6g7yGlc+BxeTHiNwyCg6YNKNNHurGmioHV9zxKFUnNiQKsnF
+  fNLibZg34Iwn03wr41Kxo4whud+S9nAKKWQHW3GijN002zbU5Awdknvp0aCGnXMM
+  I3MzDvviluYKwOFAeh69cVMayn/eDckOVRkNhzXktc/ZYTQ56jnlwVtD+cWbUNAj
+  Mzuyg3XF1copcq3DBG28ZFeRSXkbOaZa1DKm8ZChT/pjDhfWtctP/ZmNseBZQvSA
+  F6H/HdjetpCwWR8w0nuP1+rnFwk80Izf9sf1HNGLSzbWcPYouMBr17GKlbvdZsqN
+  HbzJOWmAIqyWBdm4/J/TnkS5p6d7mWImvQ==
+  -----END CERTIFICATE-----
+imageContentSources:
+- mirrors:
+  - $BASTIONFQDN:8443/ocp4/openshift4
+  source: quay.io/openshift-release-dev/ocp-release
+- mirrors:
+  - $BASTIONFQDN:8443/ocp4/openshift4
+  source: quay.io/openshift-release-dev/ocp-v4.0-art-dev
+- mirrors:
+  - $BASTIONFQDN:8443/edge-infrastructure
+  source: quay.io/edge-infrastructure
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/odf4-rook-ceph-rhel8-operator
+  source: registry.redhat.io/odf4/rook-ceph-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/odf4-odr-cluster-operator-bundle
+  source: registry.redhat.io/odf4/odr-cluster-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-tech-preview-eventing-kafka-broker-controller-rhel8
+  source: registry.redhat.io/openshift-serverless-1-tech-preview/eventing-kafka-broker-controller-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-tech-preview-eventing-storage-version-migration-rhel8
+  source: registry.redhat.io/openshift-serverless-1-tech-preview/eventing-storage-version-migration-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-local-storage-diskmaker
+  source: registry.redhat.io/openshift4/ose-local-storage-diskmaker
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-cluster-nfd-operator-bundle
+  source: registry.redhat.io/openshift4/ose-cluster-nfd-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-tech-preview-submariner-operator-bundle
+  source: registry.redhat.io/rhacm2-tech-preview/submariner-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-kourier-control-rhel8
+  source: registry.redhat.io/openshift-serverless-1/kourier-control-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/codeready-workspaces-pluginregistry-rhel8
+  source: registry.redhat.io/codeready-workspaces/pluginregistry-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-service-mesh-istio-rhel8-operator
+  source: registry.redhat.io/openshift-service-mesh/istio-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-acm-must-gather-rhel8
+  source: registry.redhat.io/rhacm2/acm-must-gather-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/quay-quay-openshift-bridge-rhel8-operator-metadata
+  source: registry.redhat.io/quay/quay-openshift-bridge-rhel8-operator-metadata
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/jboss-eap-7-eap73-rhel8-operator-bundle
+  source: registry.redhat.io/jboss-eap-7/eap73-rhel8-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/container-native-virtualization-kubevirt-velero-plugin-rhel8
+  source: registry.redhat.io/container-native-virtualization/kubevirt-velero-plugin-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-compliance-content-rhel8
+  source: registry.redhat.io/openshift4/compliance-content-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/3scale-amp2-3scale-rhel7-operator-metadata
+  source: registry.redhat.io/3scale-amp2/3scale-rhel7-operator-metadata
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-logging-cluster-logging-rhel8-operator
+  source: registry.redhat.io/openshift-logging/cluster-logging-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-pipelines-pipelines-rhel8-operator
+  source: registry.redhat.io/openshift-pipelines/pipelines-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/amq7-amq-online-1-console-init
+  source: registry.redhat.io/amq7/amq-online-1-console-init
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/cryostat-20-tech-preview-jfr-datasource-rhel8
+  source: registry.redhat.io/cryostat-20-tech-preview/jfr-datasource-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-serving-activator-rhel8
+  source: registry.redhat.io/openshift-serverless-1/serving-activator-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-eventing-controller-rhel8
+  source: registry.redhat.io/openshift-serverless-1/eventing-controller-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-cluster-curator-controller-rhel8
+  source: registry.redhat.io/rhacm2/cluster-curator-controller-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhel8-postgresql-96
+  source: registry.redhat.io/rhel8/postgresql-96
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/datagrid-datagrid-8-prod-operator-bundle
+  source: registry.redhat.io/datagrid/datagrid-8-prod-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/ansible-automation-platform-21-ee-29-rhel8
+  source: registry.redhat.io/ansible-automation-platform-21/ee-29-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/ansible-automation-platform-21-azure-billing-rhel8
+  source: registry.redhat.io/ansible-automation-platform-21/azure-billing-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/container-native-virtualization-kubevirt-metrics-collector
+  source: registry.redhat.io/container-native-virtualization/kubevirt-metrics-collector
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-logging-loki-rhel8-operator
+  source: registry.redhat.io/openshift-logging/loki-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/container-native-virtualization-virt-cdi-uploadproxy
+  source: registry.redhat.io/container-native-virtualization/virt-cdi-uploadproxy
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/integration-camel-k-rhel8-operator-bundle
+  source: registry.redhat.io/integration/camel-k-rhel8-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-sriov-cni
+  source: registry.redhat.io/openshift4/ose-sriov-cni
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhosdt-jaeger-agent-rhel8
+  source: registry.redhat.io/rhosdt/jaeger-agent-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/odf4-mcg-core-rhel8
+  source: registry.redhat.io/odf4/mcg-core-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhosdt-jaeger-es-rollover-rhel8
+  source: registry.redhat.io/rhosdt/jaeger-es-rollover-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-pipelines-pipelines-operator-proxy-rhel8
+  source: registry.redhat.io/openshift-pipelines/pipelines-operator-proxy-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-work-rhel8
+  source: registry.redhat.io/rhacm2/work-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/3scale-amp2-zync-rhel8
+  source: registry.redhat.io/3scale-amp2/zync-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-pipelines-tech-preview-pipelines-triggers-controller-rhel8
+  source: registry.redhat.io/openshift-pipelines-tech-preview/pipelines-triggers-controller-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/fuse7-fuse-online-ui-rhel8
+  source: registry.redhat.io/fuse7/fuse-online-ui-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/fuse7-fuse-ignite-ui
+  source: registry.redhat.io/fuse7/fuse-ignite-ui
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/container-native-virtualization-hostpath-provisioner-rhel8
+  source: registry.redhat.io/container-native-virtualization/hostpath-provisioner-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/node-healthcheck-operator-tech-preview-node-healthcheck-rhel8-operator
+  source: registry.redhat.io/node-healthcheck-operator-tech-preview/node-healthcheck-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/oadp-oadp-velero-plugin-for-microsoft-azure-rhel8
+  source: registry.redhat.io/oadp/oadp-velero-plugin-for-microsoft-azure-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/oadp-oadp-velero-plugin-rhel8
+  source: registry.redhat.io/oadp/oadp-velero-plugin-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/migration-toolkit-virtualization-mtv-validation-rhel8
+  source: registry.redhat.io/migration-toolkit-virtualization/mtv-validation-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-gitops-1-gitops-operator-bundle
+  source: registry.redhat.io/openshift-gitops-1/gitops-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/workload-availability-node-maintenance-rhel8-operator
+  source: registry.redhat.io/workload-availability/node-maintenance-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-clusterresourceoverride-operator-bundle
+  source: registry.redhat.io/openshift4/ose-clusterresourceoverride-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/odf4-mcg-operator-bundle
+  source: registry.redhat.io/odf4/mcg-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-service-mesh-kiali-rhel8
+  source: registry.redhat.io/openshift-service-mesh/kiali-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-serving-autoscaler-rhel8
+  source: registry.redhat.io/openshift-serverless-1/serving-autoscaler-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-service-mesh-proxyv2-rhel8
+  source: registry.redhat.io/openshift-service-mesh/proxyv2-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/container-native-virtualization-virt-cdi-controller
+  source: registry.redhat.io/container-native-virtualization/virt-cdi-controller
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-service-mesh-ior-rhel8
+  source: registry.redhat.io/openshift-service-mesh/ior-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhmtc-openshift-migration-velero-plugin-for-gcp-rhel8
+  source: registry.redhat.io/rhmtc/openshift-migration-velero-plugin-for-gcp-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-kubernetes-nmstate-handler-rhel8
+  source: registry.redhat.io/openshift4/ose-kubernetes-nmstate-handler-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-sriov-dp-admission-controller
+  source: registry.redhat.io/openshift4/ose-sriov-dp-admission-controller
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-logging-loki-operator-bundle
+  source: registry.redhat.io/openshift-logging/loki-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/quay-quay-bridge-operator-rhel8
+  source: registry.redhat.io/quay/quay-bridge-operator-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-eventing-in-memory-channel-dispatcher-rhel8
+  source: registry.redhat.io/openshift-serverless-1/eventing-in-memory-channel-dispatcher-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-serving-domain-mapping-webhook-rhel8
+  source: registry.redhat.io/openshift-serverless-1/serving-domain-mapping-webhook-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-logging-logging-curator5-rhel8
+  source: registry.redhat.io/openshift-logging/logging-curator5-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/ansible-automation-platform-21-ee-supported-rhel8
+  source: registry.redhat.io/ansible-automation-platform-21/ee-supported-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-acm-operator-bundle
+  source: registry.redhat.io/rhacm2/acm-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-eventing-in-memory-channel-controller-rhel8
+  source: registry.redhat.io/openshift-serverless-1/eventing-in-memory-channel-controller-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-volsync-mover-restic-rhel8
+  source: registry.redhat.io/rhacm2/volsync-mover-restic-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-csi-external-attacher
+  source: registry.redhat.io/openshift4/ose-csi-external-attacher
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-pipelines-tech-preview-pipelines-rhel8-operator-metadata
+  source: registry.redhat.io/openshift-pipelines-tech-preview/pipelines-rhel8-operator-metadata
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/odf4-odr-hub-operator-bundle
+  source: registry.redhat.io/odf4/odr-hub-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-tech-preview-eventing-broker-cleanup-rhel8
+  source: registry.redhat.io/openshift-serverless-1-tech-preview/eventing-broker-cleanup-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-vertical-pod-autoscaler-rhel8
+  source: registry.redhat.io/openshift4/ose-vertical-pod-autoscaler-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-local-storage-operator
+  source: registry.redhat.io/openshift4/ose-local-storage-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-service-mesh-kiali-rhel8-operator
+  source: registry.redhat.io/openshift-service-mesh/kiali-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/container-native-virtualization-virt-cdi-apiserver
+  source: registry.redhat.io/container-native-virtualization/virt-cdi-apiserver
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/quay-quay-container-security-rhel8-operator-metadata
+  source: registry.redhat.io/quay/quay-container-security-rhel8-operator-metadata
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-logging-elasticsearch6
+  source: registry.redhat.io/openshift4/ose-logging-elasticsearch6
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/amq7-amq-streams-bridge-rhel7
+  source: registry.redhat.io/amq7/amq-streams-bridge-rhel7
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-serverless-operator-bundle
+  source: registry.redhat.io/openshift-serverless-1/serverless-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/codeready-workspaces-plugin-java11-openj9-rhel8
+  source: registry.redhat.io/codeready-workspaces/plugin-java11-openj9-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-multicluster-operators-deployable-rhel8
+  source: registry.redhat.io/rhacm2/multicluster-operators-deployable-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-update-service-cincinnati-operator-bundle
+  source: registry.redhat.io/openshift-update-service/cincinnati-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/ocp-tools-4-service-binding-rhel8-operator
+  source: registry.redhat.io/ocp-tools-4/service-binding-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/odf4-odf-operator-bundle
+  source: registry.redhat.io/odf4/odf-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/ansible-automation-platform-21-platform-resource-runner-rhel8
+  source: registry.redhat.io/ansible-automation-platform-21/platform-resource-runner-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/oadp-oadp-velero-plugin-for-gcp-rhel8
+  source: registry.redhat.io/oadp/oadp-velero-plugin-for-gcp-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/advanced-cluster-security-rhacs-main-rhel8
+  source: registry.redhat.io/advanced-cluster-security/rhacs-main-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/container-native-virtualization-hyperconverged-cluster-operator
+  source: registry.redhat.io/container-native-virtualization/hyperconverged-cluster-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/identity-config-mgmt-rhel8-operator
+  source: registry.redhat.io/identity-config/mgmt-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/web-terminal-tech-preview-web-terminal-rhel8-operator
+  source: registry.redhat.io/web-terminal-tech-preview/web-terminal-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/integration-service-registry-jpa-rhel8
+  source: registry.redhat.io/integration/service-registry-jpa-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-logging-kibana6
+  source: registry.redhat.io/openshift4/ose-logging-kibana6
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/integration-camel-k-rhel8-operator
+  source: registry.redhat.io/integration/camel-k-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-governance-policy-spec-sync-rhel8
+  source: registry.redhat.io/rhacm2/governance-policy-spec-sync-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/integration-service-registry-sql-rhel8
+  source: registry.redhat.io/integration/service-registry-sql-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-pipelines-pipelines-webhook-rhel8
+  source: registry.redhat.io/openshift-pipelines/pipelines-webhook-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-cluster-nfd-operator
+  source: registry.redhat.io/openshift4/ose-cluster-nfd-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-search-ui-rhel8
+  source: registry.redhat.io/rhacm2/search-ui-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/fuse7-fuse-ignite-upgrade
+  source: registry.redhat.io/fuse7/fuse-ignite-upgrade
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/container-native-virtualization-kubevirt-ssp-operator
+  source: registry.redhat.io/container-native-virtualization/kubevirt-ssp-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-governance-policy-status-sync-rhel8
+  source: registry.redhat.io/rhacm2/governance-policy-status-sync-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/amq7-amq-online-1-console-server-rhel7
+  source: registry.redhat.io/amq7/amq-online-1-console-server-rhel7
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhel9-beta-tang-operator
+  source: registry.redhat.io/rhel9-beta/tang-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-sandboxed-containers-tech-preview-osc-rhel8-operator
+  source: registry.redhat.io/openshift-sandboxed-containers-tech-preview/osc-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-eventing-kafka-channel-webhook-rhel8
+  source: registry.redhat.io/openshift-serverless-1/eventing-kafka-channel-webhook-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-logging-cluster-logging-operator-bundle
+  source: registry.redhat.io/openshift-logging/cluster-logging-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-tech-preview-eventing-rhel8-operator
+  source: registry.redhat.io/openshift-serverless-1-tech-preview/eventing-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-kubernetes-nmstate-operator-bundle
+  source: registry.redhat.io/openshift4/kubernetes-nmstate-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/migration-toolkit-virtualization-mtv-virt-v2v-rhel8
+  source: registry.redhat.io/migration-toolkit-virtualization/mtv-virt-v2v-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-pipelines-tech-preview-pipelines-kubeconfigwriter-rhel8
+  source: registry.redhat.io/openshift-pipelines-tech-preview/pipelines-kubeconfigwriter-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhmtc-openshift-migration-velero-plugin-for-microsoft-azure-rhel8
+  source: registry.redhat.io/rhmtc/openshift-migration-velero-plugin-for-microsoft-azure-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-tech-preview-eventing-ping-source-rhel8
+  source: registry.redhat.io/openshift-serverless-1-tech-preview/eventing-ping-source-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-registration-rhel8
+  source: registry.redhat.io/rhacm2/registration-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhosdt-jaeger-es-index-cleaner-rhel8
+  source: registry.redhat.io/rhosdt/jaeger-es-index-cleaner-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/3scale-amp2-apicast-rhel7-operator
+  source: registry.redhat.io/3scale-amp2/apicast-rhel7-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/oadp-oadp-velero-rhel8
+  source: registry.redhat.io/oadp/oadp-velero-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-kube-rbac-proxy-rhel8
+  source: registry.redhat.io/rhacm2/kube-rbac-proxy-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-net-istio-controller-rhel8
+  source: registry.redhat.io/openshift-serverless-1/net-istio-controller-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/codeready-workspaces-plugin-openshift-rhel8
+  source: registry.redhat.io/codeready-workspaces/plugin-openshift-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/amq7-tech-preview-amq-online-1-iot-tenant-service
+  source: registry.redhat.io/amq7-tech-preview/amq-online-1-iot-tenant-service
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-eventing-kafka-storage-version-migration-rhel8
+  source: registry.redhat.io/openshift-serverless-1/eventing-kafka-storage-version-migration-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/jboss-eap-7-eap-xp3-openj9-11-openshift-rhel8
+  source: registry.redhat.io/jboss-eap-7/eap-xp3-openj9-11-openshift-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhmtc-openshift-migration-rsync-transfer-rhel8
+  source: registry.redhat.io/rhmtc/openshift-migration-rsync-transfer-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-eventing-apiserver-receive-adapter-rhel8
+  source: registry.redhat.io/openshift-serverless-1/eventing-apiserver-receive-adapter-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhdm-7-rhdm-controller-rhel8
+  source: registry.redhat.io/rhdm-7/rhdm-controller-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-logging-elasticsearch6-rhel8
+  source: registry.redhat.io/openshift-logging/elasticsearch6-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhel9-beta-tang-operator-bundle
+  source: registry.redhat.io/rhel9-beta/tang-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-service-mesh-pilot-rhel8
+  source: registry.redhat.io/openshift-service-mesh/pilot-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhel8-skopeo
+  source: registry.redhat.io/rhel8/skopeo
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/ansible-automation-platform-21-platform-resource-rhel8-operator
+  source: registry.redhat.io/ansible-automation-platform-21/platform-resource-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-pipelines-tech-preview-pipelines-controller-rhel8
+  source: registry.redhat.io/openshift-pipelines-tech-preview/pipelines-controller-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-wincw-windows-machine-config-rhel8-operator
+  source: registry.redhat.io/openshift4-wincw/windows-machine-config-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhosdt-opentelemetry-collector-rhel8
+  source: registry.redhat.io/rhosdt/opentelemetry-collector-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-grc-ui-rhel8
+  source: registry.redhat.io/rhacm2/grc-ui-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/integration-rh-integration-rhel8-operator
+  source: registry.redhat.io/integration/rh-integration-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-eventing-mtbroker-filter-rhel8
+  source: registry.redhat.io/openshift-serverless-1/eventing-mtbroker-filter-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-eventing-webhook-rhel8
+  source: registry.redhat.io/openshift-serverless-1/eventing-webhook-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-node-feature-discovery
+  source: registry.redhat.io/openshift4/ose-node-feature-discovery
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/datagrid-datagrid-8-openj9-11-rhel8
+  source: registry.redhat.io/datagrid/datagrid-8-openj9-11-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/advanced-cluster-security-rhacs-roxctl-rhel8
+  source: registry.redhat.io/advanced-cluster-security/rhacs-roxctl-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-compliance-openscap-rhel8
+  source: registry.redhat.io/openshift4/compliance-openscap-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/container-native-virtualization-virt-cdi-importer
+  source: registry.redhat.io/container-native-virtualization/virt-cdi-importer
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-sriov-network-config-daemon
+  source: registry.redhat.io/openshift4/ose-sriov-network-config-daemon
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/codeready-workspaces-devfileregistry-rhel8
+  source: registry.redhat.io/codeready-workspaces/devfileregistry-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-tech-preview-eventing-mtbroker-ingress-rhel8
+  source: registry.redhat.io/openshift-serverless-1-tech-preview/eventing-mtbroker-ingress-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-multicluster-operators-placementrule-rhel8
+  source: registry.redhat.io/rhacm2/multicluster-operators-placementrule-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-metrics-collector-rhel8
+  source: registry.redhat.io/rhacm2/metrics-collector-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/odf4-ocs-operator-bundle
+  source: registry.redhat.io/odf4/ocs-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/distributed-tracing-jaeger-es-index-cleaner-rhel8
+  source: registry.redhat.io/distributed-tracing/jaeger-es-index-cleaner-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/web-terminal-tech-preview-web-terminal-rhel8-operator-metadata
+  source: registry.redhat.io/web-terminal-tech-preview/web-terminal-rhel8-operator-metadata
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/ocp-tools-4-tech-preview-service-binding-rhel8-operator
+  source: registry.redhat.io/ocp-tools-4-tech-preview/service-binding-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-logging-elasticsearch-proxy-rhel8
+  source: registry.redhat.io/openshift-logging/elasticsearch-proxy-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/codeready-workspaces-machineexec-rhel8
+  source: registry.redhat.io/codeready-workspaces/machineexec-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-dpu-network-operator-bundle
+  source: registry.redhat.io/openshift4/dpu-network-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-pipelines-pipelines-entrypoint-rhel8
+  source: registry.redhat.io/openshift-pipelines/pipelines-entrypoint-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-pipelines-pipelines-controller-rhel8
+  source: registry.redhat.io/openshift-pipelines/pipelines-controller-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-search-rhel8
+  source: registry.redhat.io/rhacm2/search-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhel8-php-72
+  source: registry.redhat.io/rhel8/php-72
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhmtc-openshift-migration-hook-runner-rhel7
+  source: registry.redhat.io/rhmtc/openshift-migration-hook-runner-rhel7
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/codeready-workspaces-stacks-dotnet-rhel8
+  source: registry.redhat.io/codeready-workspaces/stacks-dotnet-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/distributed-tracing-jaeger-rhel8-operator
+  source: registry.redhat.io/distributed-tracing/jaeger-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/3scale-amp2-backend-rhel8
+  source: registry.redhat.io/3scale-amp2/backend-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-sriov-network-webhook
+  source: registry.redhat.io/openshift4/ose-sriov-network-webhook
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/fuse7-fuse-ignite-s2i
+  source: registry.redhat.io/fuse7/fuse-ignite-s2i
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/odf4-odf-lvm-rhel8-operator
+  source: registry.redhat.io/odf4/odf-lvm-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/fuse7-fuse-online-builder-rhel8
+  source: registry.redhat.io/fuse7/fuse-online-builder-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/codeready-workspaces-crw-2-rhel8-operator-bundle
+  source: registry.redhat.io/codeready-workspaces/crw-2-rhel8-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/advanced-cluster-security-rhacs-scanner-db-rhel8
+  source: registry.redhat.io/advanced-cluster-security/rhacs-scanner-db-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhosdt-jaeger-collector-rhel8
+  source: registry.redhat.io/rhosdt/jaeger-collector-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-prometheus-alertmanager-rhel8
+  source: registry.redhat.io/rhacm2/prometheus-alertmanager-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/fuse7-fuse-apicurito-generator-rhel8
+  source: registry.redhat.io/fuse7/fuse-apicurito-generator-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-pipelines-tech-preview-pipelines-pullrequest-init-rhel8
+  source: registry.redhat.io/openshift-pipelines-tech-preview/pipelines-pullrequest-init-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-endpoint-monitoring-rhel8-operator
+  source: registry.redhat.io/rhacm2/endpoint-monitoring-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/amq7-amq-online-1-agent
+  source: registry.redhat.io/amq7/amq-online-1-agent
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhpam-7-rhpam-controller-rhel8
+  source: registry.redhat.io/rhpam-7/rhpam-controller-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhpam-7-rhpam-dashbuilder-rhel8
+  source: registry.redhat.io/rhpam-7/rhpam-dashbuilder-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-console-api-rhel8
+  source: registry.redhat.io/rhacm2/console-api-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/amq7-amq-interconnect
+  source: registry.redhat.io/amq7/amq-interconnect
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-pipelines-tech-preview-pipelines-imagedigestexporter-rhel8
+  source: registry.redhat.io/openshift-pipelines-tech-preview/pipelines-imagedigestexporter-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/quay-quay-container-security-operator-bundle
+  source: registry.redhat.io/quay/quay-container-security-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-pipelines-pipelines-hub-ui-rhel8
+  source: registry.redhat.io/openshift-pipelines/pipelines-hub-ui-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-dpu-network-rhel8-operator
+  source: registry.redhat.io/openshift4/dpu-network-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-tech-preview-eventing-ping-rhel8
+  source: registry.redhat.io/openshift-serverless-1-tech-preview/eventing-ping-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-pipelines-pipelines-pipelines-as-code-rhel8
+  source: registry.redhat.io/openshift-pipelines/pipelines-pipelines-as-code-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/web-terminal-tech-preview-web-terminal-tooling-rhel8
+  source: registry.redhat.io/web-terminal-tech-preview/web-terminal-tooling-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/fuse7-fuse-apicurito
+  source: registry.redhat.io/fuse7/fuse-apicurito
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/odf4-odf-multicluster-rhel8-operator
+  source: registry.redhat.io/odf4/odf-multicluster-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhpam-7-rhpam-businesscentral-monitoring-rhel8
+  source: registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-eventing-storage-version-migration-rhel8
+  source: registry.redhat.io/openshift-serverless-1/eventing-storage-version-migration-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/amq7-amq-online-1-standard-controller
+  source: registry.redhat.io/amq7/amq-online-1-standard-controller
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/fuse7-fuse-online-upgrade-rhel8
+  source: registry.redhat.io/fuse7/fuse-online-upgrade-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/fuse7-fuse-console-rhel7-operator-metadata
+  source: registry.redhat.io/fuse7/fuse-console-rhel7-operator-metadata
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/advanced-cluster-security-rhacs-operator-bundle
+  source: registry.redhat.io/advanced-cluster-security/rhacs-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-clusterresourceoverride-rhel8
+  source: registry.redhat.io/openshift4/ose-clusterresourceoverride-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-cert-policy-controller-rhel8
+  source: registry.redhat.io/rhacm2/cert-policy-controller-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhmtc-openshift-migration-registry-rhel8
+  source: registry.redhat.io/rhmtc/openshift-migration-registry-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhmtc-openshift-migration-log-reader-rhel8
+  source: registry.redhat.io/rhmtc/openshift-migration-log-reader-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/cryostat-20-tech-preview-cryostat-rhel8
+  source: registry.redhat.io/cryostat-20-tech-preview/cryostat-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhscl-mysql-57-rhel7
+  source: registry.redhat.io/rhscl/mysql-57-rhel7
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-eventing-mtchannel-broker-rhel8
+  source: registry.redhat.io/openshift-serverless-1/eventing-mtchannel-broker-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-logging-log-file-metric-exporter-rhel8
+  source: registry.redhat.io/openshift-logging/log-file-metric-exporter-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/amq7-amq-streams-rhel8-operator
+  source: registry.redhat.io/amq7/amq-streams-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/odf4-odf-rhel8-operator
+  source: registry.redhat.io/odf4/odf-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhel8-buildah
+  source: registry.redhat.io/rhel8/buildah
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/jboss-webserver-5-webserver-openjdk8-operator-bundle
+  source: registry.redhat.io/jboss-webserver-5/webserver-openjdk8-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/migration-toolkit-virtualization-mtv-must-gather-api-rhel8
+  source: registry.redhat.io/migration-toolkit-virtualization/mtv-must-gather-api-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/container-native-virtualization-hyperconverged-cluster-webhook-rhel8
+  source: registry.redhat.io/container-native-virtualization/hyperconverged-cluster-webhook-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-multicluster-operators-subscription-release-rhel8
+  source: registry.redhat.io/rhacm2/multicluster-operators-subscription-release-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/skupper-tech-preview-site-controller-rhel8
+  source: registry.redhat.io/skupper-tech-preview/site-controller-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/edo-external-dns-operator-bundle
+  source: registry.redhat.io/edo/external-dns-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhosdt-jaeger-ingester-rhel8
+  source: registry.redhat.io/rhosdt/jaeger-ingester-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-cluster-proxy-addon-rhel8
+  source: registry.redhat.io/rhacm2/cluster-proxy-addon-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-service-mesh-mixer-rhel8
+  source: registry.redhat.io/openshift-service-mesh/mixer-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhosdt-jaeger-query-rhel8
+  source: registry.redhat.io/rhosdt/jaeger-query-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-tech-preview-eventing-cronjob-receive-adapter-rhel8
+  source: registry.redhat.io/openshift-serverless-1-tech-preview/eventing-cronjob-receive-adapter-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/datagrid-datagrid-8-rhel8
+  source: registry.redhat.io/datagrid/datagrid-8-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-serving-storage-version-migration-rhel8
+  source: registry.redhat.io/openshift-serverless-1/serving-storage-version-migration-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-openshift-hive-rhel8
+  source: registry.redhat.io/rhacm2/openshift-hive-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/3scale-amp2-memcached-rhel7
+  source: registry.redhat.io/3scale-amp2/memcached-rhel7
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-klusterlet-operator-bundle
+  source: registry.redhat.io/rhacm2/klusterlet-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/codeready-workspaces-devworkspace-rhel8
+  source: registry.redhat.io/codeready-workspaces/devworkspace-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-file-integrity-rhel8-operator-metadata
+  source: registry.redhat.io/openshift4/file-integrity-rhel8-operator-metadata
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/redhat-sso-7-sso73-openshift
+  source: registry.redhat.io/redhat-sso-7/sso73-openshift
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/codeready-workspaces-traefik-rhel8
+  source: registry.redhat.io/codeready-workspaces/traefik-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rh-sso-7-sso7-rhel8-operator-bundle
+  source: registry.redhat.io/rh-sso-7/sso7-rhel8-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/container-native-virtualization-cluster-network-addons-operator
+  source: registry.redhat.io/container-native-virtualization/cluster-network-addons-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/compliance-openshift-file-integrity-rhel8-operator
+  source: registry.redhat.io/compliance/openshift-file-integrity-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-service-mesh-prometheus-rhel8
+  source: registry.redhat.io/openshift-service-mesh/prometheus-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-pipelines-pipelines-triggers-core-interceptors-rhel8
+  source: registry.redhat.io/openshift-pipelines/pipelines-triggers-core-interceptors-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/ansible-automation-platform-21-azure-ui-rhel8
+  source: registry.redhat.io/ansible-automation-platform-21/azure-ui-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-gatekeeper-rhel8
+  source: registry.redhat.io/rhacm2/gatekeeper-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/jboss-amq-6-amq63-openshift
+  source: registry.redhat.io/jboss-amq-6/amq63-openshift
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-assisted-image-service-rhel8
+  source: registry.redhat.io/rhacm2/assisted-image-service-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rh-sso-7-sso74-openj9-openshift-rhel8
+  source: registry.redhat.io/rh-sso-7/sso74-openj9-openshift-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-multicluster-operators-subscription-rhel8
+  source: registry.redhat.io/rhacm2/multicluster-operators-subscription-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-metallb-operator-bundle
+  source: registry.redhat.io/openshift4/metallb-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/quay-quay-container-security-operator-rhel8
+  source: registry.redhat.io/quay/quay-container-security-operator-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-sriov-network-operator
+  source: registry.redhat.io/openshift4/ose-sriov-network-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/costmanagement-costmanagement-metrics-operator-bundle
+  source: registry.redhat.io/costmanagement/costmanagement-metrics-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/cert-manager-cert-manager-operator-rhel8
+  source: registry.redhat.io/cert-manager/cert-manager-operator-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift3-ose-cli
+  source: registry.redhat.io/openshift3/ose-cli
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-gitops-1-gitops-rhel8-operator
+  source: registry.redhat.io/openshift-gitops-1/gitops-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-prometheus-rhel8
+  source: registry.redhat.io/rhacm2/prometheus-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhpam-7-rhpam-kogito-rhel8-operator-bundle
+  source: registry.redhat.io/rhpam-7/rhpam-kogito-rhel8-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-eventing-kafka-channel-controller-rhel8
+  source: registry.redhat.io/openshift-serverless-1/eventing-kafka-channel-controller-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/amq7-amq-streams-kafka-31-rhel8
+  source: registry.redhat.io/amq7/amq-streams-kafka-31-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-service-mesh-kiali-rhel7
+  source: registry.redhat.io/openshift-service-mesh/kiali-rhel7
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-logging-fluentd-rhel8
+  source: registry.redhat.io/openshift-logging/fluentd-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-serving-webhook-rhel8
+  source: registry.redhat.io/openshift-serverless-1/serving-webhook-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/identity-config-dex-operator-rhel8
+  source: registry.redhat.io/identity-config/dex-operator-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhceph-rhceph-5-rhel8
+  source: registry.redhat.io/rhceph/rhceph-5-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/fuse7-fuse-online-rhel8-operator-bundle
+  source: registry.redhat.io/fuse7/fuse-online-rhel8-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/container-native-virtualization-cnv-must-gather-rhel8
+  source: registry.redhat.io/container-native-virtualization/cnv-must-gather-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-compliance-rhel8-operator-metadata
+  source: registry.redhat.io/openshift4/compliance-rhel8-operator-metadata
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-update-service-openshift-update-service-rhel8
+  source: registry.redhat.io/openshift-update-service/openshift-update-service-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/oadp-oadp-operator-bundle
+  source: registry.redhat.io/oadp/oadp-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/advanced-cluster-security-rhacs-docs-rhel8
+  source: registry.redhat.io/advanced-cluster-security/rhacs-docs-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhosdt-opentelemetry-rhel8-operator
+  source: registry.redhat.io/rhosdt/opentelemetry-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/codeready-workspaces-stacks-php-rhel8
+  source: registry.redhat.io/codeready-workspaces/stacks-php-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/container-native-virtualization-kubevirt-vmware
+  source: registry.redhat.io/container-native-virtualization/kubevirt-vmware
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/jboss-eap-7-eap-xp3-openjdk11-openshift-rhel8
+  source: registry.redhat.io/jboss-eap-7/eap-xp3-openjdk11-openshift-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-insights-client-rhel8
+  source: registry.redhat.io/rhacm2/insights-client-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/node-healthcheck-operator-tech-preview-node-healthcheck-operator-rhel8
+  source: registry.redhat.io/node-healthcheck-operator-tech-preview/node-healthcheck-operator-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-pipelines-tech-preview-pipelines-webhook-rhel8
+  source: registry.redhat.io/openshift-pipelines-tech-preview/pipelines-webhook-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rh-sso-7-sso7-rhel8-operator
+  source: registry.redhat.io/rh-sso-7/sso7-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-assisted-installer-reporter-rhel8
+  source: registry.redhat.io/rhacm2/assisted-installer-reporter-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/odf4-volume-replication-rhel8-operator
+  source: registry.redhat.io/odf4/volume-replication-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-volsync-mover-rclone-rhel8
+  source: registry.redhat.io/rhacm2/volsync-mover-rclone-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/fuse7-fuse-postgres-exporter-rhel7
+  source: registry.redhat.io/fuse7/fuse-postgres-exporter-rhel7
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/container-native-virtualization-kubevirt-template-validator
+  source: registry.redhat.io/container-native-virtualization/kubevirt-template-validator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/odf4-odf-lvm-must-gather-rhel8
+  source: registry.redhat.io/odf4/odf-lvm-must-gather-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-pipelines-tech-preview-pipelines-triggers-eventlistenersink-rhel8
+  source: registry.redhat.io/openshift-pipelines-tech-preview/pipelines-triggers-eventlistenersink-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-tech-preview-eventing-channel-broker-rhel8
+  source: registry.redhat.io/openshift-serverless-1-tech-preview/eventing-channel-broker-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-pipelines-pipelines-git-init-rhel8
+  source: registry.redhat.io/openshift-pipelines/pipelines-git-init-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/identity-config-mgmt-operator-bundle
+  source: registry.redhat.io/identity-config/mgmt-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/integration-service-registry-streams-rhel8
+  source: registry.redhat.io/integration/service-registry-streams-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/odf4-mcg-rhel8-operator
+  source: registry.redhat.io/odf4/mcg-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-serving-controller-rhel8
+  source: registry.redhat.io/openshift-serverless-1/serving-controller-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-multicluster-observability-rhel8-operator
+  source: registry.redhat.io/rhacm2/multicluster-observability-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/distributed-tracing-jaeger-agent-rhel8
+  source: registry.redhat.io/distributed-tracing/jaeger-agent-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-rbac-query-proxy-rhel8
+  source: registry.redhat.io/rhacm2/rbac-query-proxy-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/container-native-virtualization-vm-import-operator-rhel8
+  source: registry.redhat.io/container-native-virtualization/vm-import-operator-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/integration-rh-integration-operator-bundle
+  source: registry.redhat.io/integration/rh-integration-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/fuse7-fuse-postgres-exporter-rhel8
+  source: registry.redhat.io/fuse7/fuse-postgres-exporter-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/compliance-openshift-compliance-openscap-rhel8
+  source: registry.redhat.io/compliance/openshift-compliance-openscap-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-pipelines-pipelines-hub-api-rhel8
+  source: registry.redhat.io/openshift-pipelines/pipelines-hub-api-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/container-native-virtualization-virt-operator
+  source: registry.redhat.io/container-native-virtualization/virt-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhmtc-openshift-migration-operator-bundle
+  source: registry.redhat.io/rhmtc/openshift-migration-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-aws-efs-csi-driver-container-rhel8
+  source: registry.redhat.io/openshift4/ose-aws-efs-csi-driver-container-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-logging-lokistack-gateway-rhel8
+  source: registry.redhat.io/openshift-logging/lokistack-gateway-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-pipelines-pipelines-operator-bundle
+  source: registry.redhat.io/openshift-pipelines/pipelines-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/cryostat-20-tech-preview-cryostat-grafana-dashboard-rhel8
+  source: registry.redhat.io/cryostat-20-tech-preview/cryostat-grafana-dashboard-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/integration-service-registry-rhel8-operator
+  source: registry.redhat.io/integration/service-registry-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-logging-elasticsearch-rhel8-operator
+  source: registry.redhat.io/openshift-logging/elasticsearch-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/ocp-tools-43-tech-preview-source-to-image-rhel8
+  source: registry.redhat.io/ocp-tools-43-tech-preview/source-to-image-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/amq7-amq-online-1-broker-plugin
+  source: registry.redhat.io/amq7/amq-online-1-broker-plugin
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/amq7-tech-preview-amq-online-1-iot-tenant-cleaner-rhel7
+  source: registry.redhat.io/amq7-tech-preview/amq-online-1-iot-tenant-cleaner-rhel7
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhosdt-jaeger-operator-bundle
+  source: registry.redhat.io/rhosdt/jaeger-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/ocp-tools-4-tech-preview-source-to-image-rhel8
+  source: registry.redhat.io/ocp-tools-4-tech-preview/source-to-image-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-elasticsearch-proxy
+  source: registry.redhat.io/openshift4/ose-elasticsearch-proxy
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/codeready-workspaces-stacks-cpp-rhel8
+  source: registry.redhat.io/codeready-workspaces/stacks-cpp-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhpam-7-rhpam-rhel8-operator
+  source: registry.redhat.io/rhpam-7/rhpam-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-eventing-kafka-source-receive-adapter-rhel8
+  source: registry.redhat.io/openshift-serverless-1/eventing-kafka-source-receive-adapter-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-tech-preview-eventing-mtchannel-broker-rhel8
+  source: registry.redhat.io/openshift-serverless-1-tech-preview/eventing-mtchannel-broker-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/fuse7-fuse-ignite-meta
+  source: registry.redhat.io/fuse7/fuse-ignite-meta
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-performance-addon-rhel8-operator
+  source: registry.redhat.io/openshift4/performance-addon-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/odf4-ocs-must-gather-rhel8
+  source: registry.redhat.io/odf4/ocs-must-gather-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/quay-quay-operator-bundle
+  source: registry.redhat.io/quay/quay-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/fuse7-fuse-online-operator-bundle
+  source: registry.redhat.io/fuse7/fuse-online-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhmtc-openshift-migration-velero-rhel8
+  source: registry.redhat.io/rhmtc/openshift-migration-velero-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-service-mesh-istio-cni-rhel8
+  source: registry.redhat.io/openshift-service-mesh/istio-cni-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/costmanagement-costmanagement-metrics-rhel8-operator
+  source: registry.redhat.io/costmanagement/costmanagement-metrics-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/fuse7-fuse-console-rhel8-operator
+  source: registry.redhat.io/fuse7/fuse-console-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/advanced-cluster-security-rhacs-scanner-db-slim-rhel8
+  source: registry.redhat.io/advanced-cluster-security/rhacs-scanner-db-slim-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/fuse7-fuse-online-rhel8-operator
+  source: registry.redhat.io/fuse7/fuse-online-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/cryostat-20-tech-preview-cryostat-operator-bundle
+  source: registry.redhat.io/cryostat-20-tech-preview/cryostat-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/container-native-virtualization-hco-bundle-registry
+  source: registry.redhat.io/container-native-virtualization/hco-bundle-registry
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-secondary-scheduler-operator-secondary-scheduler-operator-bundle
+  source: registry.redhat.io/openshift-secondary-scheduler-operator/secondary-scheduler-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-compliance-rhel8-operator
+  source: registry.redhat.io/openshift4/compliance-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/advanced-cluster-security-rhacs-collector-slim-rhel8
+  source: registry.redhat.io/advanced-cluster-security/rhacs-collector-slim-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/advanced-cluster-security-rhacs-scanner-slim-rhel8
+  source: registry.redhat.io/advanced-cluster-security/rhacs-scanner-slim-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhdm-7-rhdm-kieserver-rhel8
+  source: registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-pipelines-pipelines-kubeconfigwriter-rhel8
+  source: registry.redhat.io/openshift-pipelines/pipelines-kubeconfigwriter-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhosdt-jaeger-all-in-one-rhel8
+  source: registry.redhat.io/rhosdt/jaeger-all-in-one-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhpam-7-rhpam-kieserver-rhel8
+  source: registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-multicluster-operators-channel-rhel8
+  source: registry.redhat.io/rhacm2/multicluster-operators-channel-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/amq7-amq-online-1-mqtt-gateway
+  source: registry.redhat.io/amq7/amq-online-1-mqtt-gateway
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/oadp-oadp-velero-plugin-for-csi-rhel8
+  source: registry.redhat.io/oadp/oadp-velero-plugin-for-csi-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/ansible-automation-platform-platform-operator-bundle
+  source: registry.redhat.io/ansible-automation-platform/platform-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/integration-service-registry-rhel8-operator-metadata
+  source: registry.redhat.io/integration/service-registry-rhel8-operator-metadata
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-tech-preview-eventing-kafka-broker-dispatcher-rhel8
+  source: registry.redhat.io/openshift-serverless-1-tech-preview/eventing-kafka-broker-dispatcher-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-tech-preview-eventing-broker-ingress-rhel8
+  source: registry.redhat.io/openshift-serverless-1-tech-preview/eventing-broker-ingress-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rh-sso-7-sso75-openshift-rhel8
+  source: registry.redhat.io/rh-sso-7/sso75-openshift-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-prometheus-alertmanager
+  source: registry.redhat.io/openshift4/ose-prometheus-alertmanager
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-logging-elasticsearch-operator-bundle
+  source: registry.redhat.io/openshift-logging/elasticsearch-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-multicloud-integrations-rhel8
+  source: registry.redhat.io/rhacm2/multicloud-integrations-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/cert-manager-cert-manager-operator-bundle
+  source: registry.redhat.io/cert-manager/cert-manager-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-tech-preview-lighthouse-coredns-rhel8
+  source: registry.redhat.io/rhacm2-tech-preview/lighthouse-coredns-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/amq7-tech-preview-amq-online-1-iot-adapters-rhel7
+  source: registry.redhat.io/amq7-tech-preview/amq-online-1-iot-adapters-rhel7
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-cluster-backup-rhel8-operator
+  source: registry.redhat.io/rhacm2/cluster-backup-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/container-native-virtualization-hostpath-csi-driver-rhel8
+  source: registry.redhat.io/container-native-virtualization/hostpath-csi-driver-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-search-aggregator-rhel8
+  source: registry.redhat.io/rhacm2/search-aggregator-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/codeready-workspaces-theia-endpoint-rhel8
+  source: registry.redhat.io/codeready-workspaces/theia-endpoint-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-insights-metrics-rhel8
+  source: registry.redhat.io/rhacm2/insights-metrics-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/amq7-amq-streams-kafka-30-rhel8
+  source: registry.redhat.io/amq7/amq-streams-kafka-30-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-csi-external-provisioner-rhel8
+  source: registry.redhat.io/openshift4/ose-csi-external-provisioner-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/amq7-amq-broker-rhel8
+  source: registry.redhat.io/amq7/amq-broker-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/codeready-workspaces-stacks-golang-rhel8
+  source: registry.redhat.io/codeready-workspaces/stacks-golang-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/amq7-amq-online-1-controller-manager-rhel7-operator
+  source: registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/container-native-virtualization-ovs-cni-plugin
+  source: registry.redhat.io/container-native-virtualization/ovs-cni-plugin
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-multiclusterhub-rhel8
+  source: registry.redhat.io/rhacm2/multiclusterhub-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhmtc-openshift-migration-controller-rhel8
+  source: registry.redhat.io/rhmtc/openshift-migration-controller-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-sriov-network-operator-bundle
+  source: registry.redhat.io/openshift4/ose-sriov-network-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-local-storage-operator-bundle
+  source: registry.redhat.io/openshift4/ose-local-storage-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-tech-preview-eventing-broker-filter-rhel8
+  source: registry.redhat.io/openshift-serverless-1-tech-preview/eventing-broker-filter-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-kubernetes-nmstate-rhel8-operator
+  source: registry.redhat.io/openshift4/kubernetes-nmstate-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-logging-vector-rhel8
+  source: registry.redhat.io/openshift-logging/vector-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-iam-policy-controller-rhel8
+  source: registry.redhat.io/rhacm2/iam-policy-controller-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-ptp-operator-metadata
+  source: registry.redhat.io/openshift4/ose-ptp-operator-metadata
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/container-native-virtualization-kubevirt-kvm-info-nfd-plugin
+  source: registry.redhat.io/container-native-virtualization/kubevirt-kvm-info-nfd-plugin
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-pipelines-tech-preview-pipelines-entrypoint-rhel8
+  source: registry.redhat.io/openshift-pipelines-tech-preview/pipelines-entrypoint-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/amq7-amq-streams-rhel7-operator
+  source: registry.redhat.io/amq7/amq-streams-rhel7-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/amq7-tech-preview-amq-online-1-iot-auth-service
+  source: registry.redhat.io/amq7-tech-preview/amq-online-1-iot-auth-service
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rh-sso-7-sso75-openj9-openshift-rhel8
+  source: registry.redhat.io/rh-sso-7/sso75-openj9-openshift-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-managedcluster-import-controller-rhel8
+  source: registry.redhat.io/rhacm2/managedcluster-import-controller-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/codeready-workspaces-pluginbroker-metadata-rhel8
+  source: registry.redhat.io/codeready-workspaces/pluginbroker-metadata-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-pipelines-tech-preview-pipelines-triggers-webhook-rhel8
+  source: registry.redhat.io/openshift-pipelines-tech-preview/pipelines-triggers-webhook-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/fuse7-fuse-ignite-server
+  source: registry.redhat.io/fuse7/fuse-ignite-server
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-grafana-dashboard-loader-rhel8
+  source: registry.redhat.io/rhacm2/grafana-dashboard-loader-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/amq7-amq-online-1-topic-forwarder
+  source: registry.redhat.io/amq7/amq-online-1-topic-forwarder
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/devworkspace-devworkspace-operator-bundle
+  source: registry.redhat.io/devworkspace/devworkspace-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhscl-mysql-80-rhel7
+  source: registry.redhat.io/rhscl/mysql-80-rhel7
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-vertical-pod-autoscaler-operator-metadata
+  source: registry.redhat.io/openshift4/ose-vertical-pod-autoscaler-operator-metadata
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhel8-postgresql-12
+  source: registry.redhat.io/rhel8/postgresql-12
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-service-mesh-ratelimit-rhel8
+  source: registry.redhat.io/openshift-service-mesh/ratelimit-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/container-native-virtualization-libguestfs-tools
+  source: registry.redhat.io/container-native-virtualization/libguestfs-tools
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-cli
+  source: registry.redhat.io/openshift4/ose-cli
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-sandboxed-containers-osc-operator-bundle
+  source: registry.redhat.io/openshift-sandboxed-containers/osc-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-frr-rhel8
+  source: registry.redhat.io/openshift4/frr-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/amq7-amq-online-1-mqtt-lwt
+  source: registry.redhat.io/amq7/amq-online-1-mqtt-lwt
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/jboss-eap-7-eap73-rhel8-operator
+  source: registry.redhat.io/jboss-eap-7/eap73-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/distributed-tracing-jaeger-ingester-rhel8
+  source: registry.redhat.io/distributed-tracing/jaeger-ingester-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-configmap-reloader
+  source: registry.redhat.io/openshift4/ose-configmap-reloader
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/ansible-automation-platform-21-azure-ui-rhel8-operator
+  source: registry.redhat.io/ansible-automation-platform-21/azure-ui-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-tech-preview-eventing-mtbroker-filter-rhel8
+  source: registry.redhat.io/openshift-serverless-1-tech-preview/eventing-mtbroker-filter-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-service-mesh-citadel-rhel8
+  source: registry.redhat.io/openshift-service-mesh/citadel-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/oadp-oadp-registry-rhel8
+  source: registry.redhat.io/oadp/oadp-registry-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/ocp-tools-4-tech-preview-service-binding-rhel8-operator-metadata
+  source: registry.redhat.io/ocp-tools-4-tech-preview/service-binding-rhel8-operator-metadata
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/container-native-virtualization-virt-api
+  source: registry.redhat.io/container-native-virtualization/virt-api
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/container-native-virtualization-kubevirt-v2v-conversion
+  source: registry.redhat.io/container-native-virtualization/kubevirt-v2v-conversion
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/jboss-eap-7-eap-xp2-openjdk11-openshift-rhel8
+  source: registry.redhat.io/jboss-eap-7/eap-xp2-openjdk11-openshift-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/odf4-odf-csi-addons-operator-bundle
+  source: registry.redhat.io/odf4/odf-csi-addons-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/codeready-workspaces-crw-2-rhel8-operator-metadata
+  source: registry.redhat.io/codeready-workspaces/crw-2-rhel8-operator-metadata
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/distributed-tracing-jaeger-es-rollover-rhel8
+  source: registry.redhat.io/distributed-tracing/jaeger-es-rollover-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/distributed-tracing-jaeger-operator-bundle
+  source: registry.redhat.io/distributed-tracing/jaeger-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/container-native-virtualization-node-maintenance-operator
+  source: registry.redhat.io/container-native-virtualization/node-maintenance-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/integration-tech-preview-camel-k-rhel8-operator
+  source: registry.redhat.io/integration-tech-preview/camel-k-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-observatorium-rhel8
+  source: registry.redhat.io/rhacm2/observatorium-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rh-acs-main
+  source: registry.redhat.io/rh-acs/main
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-memcached-exporter-rhel8
+  source: registry.redhat.io/rhacm2/memcached-exporter-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/ubi8-micro
+  source: registry.redhat.io/ubi8-micro
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhscl-redis-5-rhel7
+  source: registry.redhat.io/rhscl/redis-5-rhel7
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-pipelines-tech-preview-pipelines-git-init-rhel8
+  source: registry.redhat.io/openshift-pipelines-tech-preview/pipelines-git-init-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/3scale-amp2-system-rhel7
+  source: registry.redhat.io/3scale-amp2/system-rhel7
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-thanos-receive-controller-rhel8
+  source: registry.redhat.io/rhacm2/thanos-receive-controller-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/container-native-virtualization-vm-import-virtv2v-rhel8
+  source: registry.redhat.io/container-native-virtualization/vm-import-virtv2v-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-aws-efs-csi-driver-rhel8-operator
+  source: registry.redhat.io/openshift4/ose-aws-efs-csi-driver-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/quay-quay-operator-rhel8
+  source: registry.redhat.io/quay/quay-operator-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-descheduler
+  source: registry.redhat.io/openshift4/ose-descheduler
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-sriov-infiniband-cni
+  source: registry.redhat.io/openshift4/ose-sriov-infiniband-cni
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/container-native-virtualization-virt-launcher
+  source: registry.redhat.io/container-native-virtualization/virt-launcher
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/container-native-virtualization-kubevirt-cpu-model-nfd-plugin
+  source: registry.redhat.io/container-native-virtualization/kubevirt-cpu-model-nfd-plugin
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/container-native-virtualization-virt-controller
+  source: registry.redhat.io/container-native-virtualization/virt-controller
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/ansible-automation-platform-cloud-addons-operator-bundle
+  source: registry.redhat.io/ansible-automation-platform/cloud-addons-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rh-acs-scanner-db
+  source: registry.redhat.io/rh-acs/scanner-db
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/ocp-tools-4-service-binding-operator-bundle
+  source: registry.redhat.io/ocp-tools-4/service-binding-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-logging-curator5
+  source: registry.redhat.io/openshift4/ose-logging-curator5
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-console-rhel8
+  source: registry.redhat.io/rhacm2/console-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/fuse7-fuse-online-meta-rhel8
+  source: registry.redhat.io/fuse7/fuse-online-meta-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/odf4-odf-console-rhel8
+  source: registry.redhat.io/odf4/odf-console-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-observatorium-rhel8-operator
+  source: registry.redhat.io/rhacm2/observatorium-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/amq7-tech-preview-amq-online-1-iot-device-registry-rhel7
+  source: registry.redhat.io/amq7-tech-preview/amq-online-1-iot-device-registry-rhel7
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhpam-7-rhpam-process-migration-rhel8
+  source: registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-discovery-rhel8-operator
+  source: registry.redhat.io/rhacm2/discovery-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-service-mesh-grafana-rhel8
+  source: registry.redhat.io/openshift-service-mesh/grafana-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/oadp-oadp-rhel8-operator
+  source: registry.redhat.io/oadp/oadp-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/compliance-openshift-compliance-content-rhel8
+  source: registry.redhat.io/compliance/openshift-compliance-content-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/quay-quay-container-security-rhel8-operator
+  source: registry.redhat.io/quay/quay-container-security-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-kn-cli-artifacts-rhel8
+  source: registry.redhat.io/openshift-serverless-1/kn-cli-artifacts-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/advanced-cluster-security-rhacs-rhel8-operator
+  source: registry.redhat.io/advanced-cluster-security/rhacs-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-special-resource-operator-bundle
+  source: registry.redhat.io/openshift4/special-resource-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/quay-quay-builder-qemu-rhcos-rhel8
+  source: registry.redhat.io/quay/quay-builder-qemu-rhcos-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/edo-external-dns-rhel8
+  source: registry.redhat.io/edo/external-dns-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-klusterlet-addon-rhel8-operator
+  source: registry.redhat.io/rhacm2/klusterlet-addon-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/integration-service-registry-kafkasql-rhel8
+  source: registry.redhat.io/integration/service-registry-kafkasql-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/node-healthcheck-operator-tech-preview-node-healthcheck-operator-bundle
+  source: registry.redhat.io/node-healthcheck-operator-tech-preview/node-healthcheck-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/codeready-workspaces-idea-rhel8
+  source: registry.redhat.io/codeready-workspaces/idea-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-metallb-rhel8
+  source: registry.redhat.io/openshift4/metallb-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/odf4-odf-csi-addons-rhel8-operator
+  source: registry.redhat.io/odf4/odf-csi-addons-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-gitops-1-argocd-rhel8
+  source: registry.redhat.io/openshift-gitops-1/argocd-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-gitops-1-applicationset-rhel8
+  source: registry.redhat.io/openshift-gitops-1/applicationset-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-governance-policy-propagator-rhel8
+  source: registry.redhat.io/rhacm2/governance-policy-propagator-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/container-native-virtualization-virt-handler
+  source: registry.redhat.io/container-native-virtualization/virt-handler
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/3scale-amp2-apicast-rhel7-operator-metadata
+  source: registry.redhat.io/3scale-amp2/apicast-rhel7-operator-metadata
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-tech-preview-submariner-route-agent-rhel8
+  source: registry.redhat.io/rhacm2-tech-preview/submariner-route-agent-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-pipelines-tech-preview-pipelines-operator-proxy-rhel8
+  source: registry.redhat.io/openshift-pipelines-tech-preview/pipelines-operator-proxy-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/amq7-amq-streams-kafka-27-rhel7
+  source: registry.redhat.io/amq7/amq-streams-kafka-27-rhel7
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/codeready-workspaces-plugin-java8-rhel8
+  source: registry.redhat.io/codeready-workspaces/plugin-java8-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/devworkspace-devworkspace-project-clone-rhel8
+  source: registry.redhat.io/devworkspace/devworkspace-project-clone-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/distributed-tracing-jaeger-all-in-one-rhel8
+  source: registry.redhat.io/distributed-tracing/jaeger-all-in-one-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/cert-manager-jetstack-cert-manager-rhel8
+  source: registry.redhat.io/cert-manager/jetstack-cert-manager-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-tech-preview-eventing-mtping-rhel8
+  source: registry.redhat.io/openshift-serverless-1-tech-preview/eventing-mtping-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-pipelines-pipelines-workingdirinit-rhel8
+  source: registry.redhat.io/openshift-pipelines/pipelines-workingdirinit-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/fuse7-fuse-apicurito-rhel7-operator
+  source: registry.redhat.io/fuse7/fuse-apicurito-rhel7-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/fuse7-fuse-console-rhel8-operator-bundle
+  source: registry.redhat.io/fuse7/fuse-console-rhel8-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/container-native-virtualization-kubernetes-nmstate-handler-rhel8
+  source: registry.redhat.io/container-native-virtualization/kubernetes-nmstate-handler-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-eventing-kafka-channel-cleanup-rhel8
+  source: registry.redhat.io/openshift-serverless-1/eventing-kafka-channel-cleanup-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-csi-node-driver-registrar
+  source: registry.redhat.io/openshift4/ose-csi-node-driver-registrar
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-memcached-rhel8
+  source: registry.redhat.io/rhacm2/memcached-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-assisted-installer-rhel8
+  source: registry.redhat.io/rhacm2/assisted-installer-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/quay-quay-bridge-operator-bundle
+  source: registry.redhat.io/quay/quay-bridge-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-config-policy-controller-rhel8
+  source: registry.redhat.io/rhacm2/config-policy-controller-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-ptp
+  source: registry.redhat.io/openshift4/ose-ptp
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/codeready-workspaces-theia-rhel8
+  source: registry.redhat.io/codeready-workspaces/theia-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-service-mesh-proxy-init-rhel7
+  source: registry.redhat.io/openshift-service-mesh/proxy-init-rhel7
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-serverless-rhel8-operator-bundle-backfill
+  source: registry.redhat.io/openshift-serverless-1/serverless-rhel8-operator-bundle-backfill
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-acm-grafana-rhel8
+  source: registry.redhat.io/rhacm2/acm-grafana-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-node-exporter-rhel8
+  source: registry.redhat.io/rhacm2/node-exporter-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-secondary-scheduler-operator-secondary-scheduler-operator-rhel8
+  source: registry.redhat.io/openshift-secondary-scheduler-operator/secondary-scheduler-operator-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/container-native-virtualization-ovs-cni-marker
+  source: registry.redhat.io/container-native-virtualization/ovs-cni-marker
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/3scale-amp2-apicast-gateway-rhel8
+  source: registry.redhat.io/3scale-amp2/apicast-gateway-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-eventing-kafka-channel-dispatcher-rhel8
+  source: registry.redhat.io/openshift-serverless-1/eventing-kafka-channel-dispatcher-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-vertical-pod-autoscaler-rhel8-operator
+  source: registry.redhat.io/openshift4/ose-vertical-pod-autoscaler-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-thanos-rhel8
+  source: registry.redhat.io/rhacm2/thanos-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhel8-redis-5
+  source: registry.redhat.io/rhel8/redis-5
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/3scale-amp2-3scale-rhel7-operator
+  source: registry.redhat.io/3scale-amp2/3scale-rhel7-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-assisted-installer-agent-rhel8
+  source: registry.redhat.io/rhacm2/assisted-installer-agent-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-elasticsearch-operator-bundle
+  source: registry.redhat.io/openshift4/ose-elasticsearch-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-pipelines-pipelines-operator-webhook-rhel8
+  source: registry.redhat.io/openshift-pipelines/pipelines-operator-webhook-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-sandboxed-containers-osc-rhel8-operator
+  source: registry.redhat.io/openshift-sandboxed-containers/osc-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/fuse7-fuse-apicurito-operator-bundle
+  source: registry.redhat.io/fuse7/fuse-apicurito-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/ansible-automation-platform-21-hub-rhel8
+  source: registry.redhat.io/ansible-automation-platform-21/hub-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-kube-state-metrics-rhel8
+  source: registry.redhat.io/rhacm2/kube-state-metrics-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhscl-postgresql-12-rhel7
+  source: registry.redhat.io/rhscl/postgresql-12-rhel7
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-grc-ui-api-rhel8
+  source: registry.redhat.io/rhacm2/grc-ui-api-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rh-sso-7-sso7-rhel8-init-container
+  source: registry.redhat.io/rh-sso-7/sso7-rhel8-init-container
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/quay-quay-openshift-bridge-rhel8-operator
+  source: registry.redhat.io/quay/quay-openshift-bridge-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/advanced-cluster-security-rhacs-collector-rhel8
+  source: registry.redhat.io/advanced-cluster-security/rhacs-collector-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rh-acs-collector
+  source: registry.redhat.io/rh-acs/collector
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/jboss-webserver-5-webserver-openjdk8-rhel8-operator
+  source: registry.redhat.io/jboss-webserver-5/webserver-openjdk8-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-pipelines-pipelines-cli-tkn-rhel8
+  source: registry.redhat.io/openshift-pipelines/pipelines-cli-tkn-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-gatekeeper-operator-bundle
+  source: registry.redhat.io/rhacm2/gatekeeper-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/amq7-amq-interconnect-operator
+  source: registry.redhat.io/amq7/amq-interconnect-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/oadp-oadp-kubevirt-velero-plugin-rhel8
+  source: registry.redhat.io/oadp/oadp-kubevirt-velero-plugin-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/codeready-workspaces-plugin-java8-openj9-rhel8
+  source: registry.redhat.io/codeready-workspaces/plugin-java8-openj9-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/amq7-amq-streams-rhel7-operator-metadata
+  source: registry.redhat.io/amq7/amq-streams-rhel7-operator-metadata
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/jboss-datagrid-7-datagrid73-openshift
+  source: registry.redhat.io/jboss-datagrid-7/datagrid73-openshift
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-ingress-rhel8-operator
+  source: registry.redhat.io/openshift-serverless-1/ingress-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/amq7-tech-preview-amq-online-1-iot-proxy-configurator
+  source: registry.redhat.io/amq7-tech-preview/amq-online-1-iot-proxy-configurator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/amq7-amq-interconnect-operator-metadata
+  source: registry.redhat.io/amq7/amq-interconnect-operator-metadata
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-pipelines-pipelines-chains-controller-rhel8
+  source: registry.redhat.io/openshift-pipelines/pipelines-chains-controller-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/codeready-workspaces-crw-2-rhel8-operator
+  source: registry.redhat.io/codeready-workspaces/crw-2-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-cloud-event-proxy
+  source: registry.redhat.io/openshift4/ose-cloud-event-proxy
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/odf4-odr-rhel8-operator
+  source: registry.redhat.io/odf4/odr-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-cluster-logging-operator
+  source: registry.redhat.io/openshift4/ose-cluster-logging-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhscl-postgresql-10-rhel7
+  source: registry.redhat.io/rhscl/postgresql-10-rhel7
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-volsync-mover-rsync-rhel8
+  source: registry.redhat.io/rhacm2/volsync-mover-rsync-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-logging-kibana6-rhel8
+  source: registry.redhat.io/openshift-logging/kibana6-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-pipelines-tech-preview-pipelines-creds-init-rhel8
+  source: registry.redhat.io/openshift-pipelines-tech-preview/pipelines-creds-init-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/workload-availability-node-maintenance-operator-bundle
+  source: registry.redhat.io/workload-availability/node-maintenance-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/jboss-eap-7-eap-xp2-openj9-11-openshift-rhel8
+  source: registry.redhat.io/jboss-eap-7/eap-xp2-openj9-11-openshift-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-client-kn-rhel8
+  source: registry.redhat.io/openshift-serverless-1/client-kn-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-haproxy-router
+  source: registry.redhat.io/openshift4/ose-haproxy-router
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-pipelines-tech-preview-pipelines-rhel8-operator
+  source: registry.redhat.io/openshift-pipelines-tech-preview/pipelines-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-clusterresourceoverride-rhel8-operator
+  source: registry.redhat.io/openshift4/ose-clusterresourceoverride-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-poison-pill-manager-operator-bundle
+  source: registry.redhat.io/openshift4/poison-pill-manager-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-pipelines-tech-preview-pipelines-nop-rhel8
+  source: registry.redhat.io/openshift-pipelines-tech-preview/pipelines-nop-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/container-native-virtualization-virt-artifacts-server
+  source: registry.redhat.io/container-native-virtualization/virt-artifacts-server
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/codeready-workspaces-dashboard-rhel8
+  source: registry.redhat.io/codeready-workspaces/dashboard-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-csi-external-provisioner
+  source: registry.redhat.io/openshift4/ose-csi-external-provisioner
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/ubi8-ubi-minimal
+  source: registry.access.redhat.com/ubi8/ubi-minimal
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-search-api-rhel8
+  source: registry.redhat.io/rhacm2/search-api-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/fuse7-fuse-online-server-rhel8
+  source: registry.redhat.io/fuse7/fuse-online-server-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-governance-policy-template-sync-rhel8
+  source: registry.redhat.io/rhacm2/governance-policy-template-sync-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/cryostat-20-tech-preview-cryostat-rhel8-operator
+  source: registry.redhat.io/cryostat-20-tech-preview/cryostat-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-cluster-logging-operator-bundle
+  source: registry.redhat.io/openshift4/ose-cluster-logging-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-serverless-rhel8-operator
+  source: registry.redhat.io/openshift-serverless-1/serverless-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-pipelines-pipelines-triggers-eventlistenersink-rhel8
+  source: registry.redhat.io/openshift-pipelines/pipelines-triggers-eventlistenersink-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/migration-toolkit-virtualization-mtv-controller-rhel8
+  source: registry.redhat.io/migration-toolkit-virtualization/mtv-controller-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-management-ingress-rhel8
+  source: registry.redhat.io/rhacm2/management-ingress-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhmtc-openshift-migration-velero-plugin-for-aws-rhel8
+  source: registry.redhat.io/rhmtc/openshift-migration-velero-plugin-for-aws-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/odf4-odf-multicluster-operator-bundle
+  source: registry.redhat.io/odf4/odf-multicluster-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/container-native-virtualization-hostpath-provisioner-rhel8-operator
+  source: registry.redhat.io/container-native-virtualization/hostpath-provisioner-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-serving-autoscaler-hpa-rhel8
+  source: registry.redhat.io/openshift-serverless-1/serving-autoscaler-hpa-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-service-mesh-istio-rhel8-operator-metadata
+  source: registry.redhat.io/openshift-service-mesh/istio-rhel8-operator-metadata
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-tech-preview-submariner-gateway-rhel8
+  source: registry.redhat.io/rhacm2-tech-preview/submariner-gateway-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift3-prometheus
+  source: registry.redhat.io/openshift3/prometheus
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-klusterlet-addon-controller-rhel8
+  source: registry.redhat.io/rhacm2/klusterlet-addon-controller-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-oauth-proxy
+  source: registry.redhat.io/openshift4/ose-oauth-proxy
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-clusterclaims-controller-rhel8
+  source: registry.redhat.io/rhacm2/clusterclaims-controller-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/odf4-odf-topolvm-rhel8
+  source: registry.redhat.io/odf4/odf-topolvm-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-update-service-openshift-update-service-rhel8-operator
+  source: registry.redhat.io/openshift-update-service/openshift-update-service-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/devworkspace-devworkspace-rhel8-operator
+  source: registry.redhat.io/devworkspace/devworkspace-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-logging-fluentd
+  source: registry.redhat.io/openshift4/ose-logging-fluentd
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/compliance-openshift-compliance-operator-bundle
+  source: registry.redhat.io/compliance/openshift-compliance-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-metallb-rhel8-operator
+  source: registry.redhat.io/openshift4/metallb-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-csi-livenessprobe
+  source: registry.redhat.io/openshift4/ose-csi-livenessprobe
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhosdt-jaeger-rhel8-operator
+  source: registry.redhat.io/rhosdt/jaeger-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhmtc-openshift-migration-rhel8-operator
+  source: registry.redhat.io/rhmtc/openshift-migration-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-pipelines-pipelines-pullrequest-init-rhel8
+  source: registry.redhat.io/openshift-pipelines/pipelines-pullrequest-init-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/amq7-amq-online-1-none-auth-service
+  source: registry.redhat.io/amq7/amq-online-1-none-auth-service
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-eventing-mtping-rhel8
+  source: registry.redhat.io/openshift-serverless-1/eventing-mtping-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/skupper-tech-preview-skupper-operator-bundle
+  source: registry.redhat.io/skupper-tech-preview/skupper-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/amq7-amq-online-1-address-space-controller
+  source: registry.redhat.io/amq7/amq-online-1-address-space-controller
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhdm-7-rhdm-decisioncentral-rhel8
+  source: registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-wincw-windows-machine-config-operator-bundle
+  source: registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-service-mesh-galley-rhel8
+  source: registry.redhat.io/openshift-service-mesh/galley-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/codeready-workspaces-pluginbroker-artifacts-rhel8
+  source: registry.redhat.io/codeready-workspaces/pluginbroker-artifacts-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-placement-rhel8
+  source: registry.redhat.io/rhacm2/placement-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhmtc-openshift-velero-plugin-rhel8
+  source: registry.redhat.io/rhmtc/openshift-velero-plugin-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/codeready-workspaces-plugin-java11-rhel8
+  source: registry.redhat.io/codeready-workspaces/plugin-java11-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/advanced-cluster-security-rhacs-scanner-rhel8
+  source: registry.redhat.io/advanced-cluster-security/rhacs-scanner-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/fuse7-fuse-apicurito-rhel8
+  source: registry.redhat.io/fuse7/fuse-apicurito-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-cluster-kube-descheduler-operator
+  source: registry.redhat.io/openshift4/ose-cluster-kube-descheduler-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/odf4-odf-csi-addons-sidecar-rhel8
+  source: registry.redhat.io/odf4/odf-csi-addons-sidecar-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/container-native-virtualization-vm-import-controller-rhel8
+  source: registry.redhat.io/container-native-virtualization/vm-import-controller-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-logging-opa-openshift-rhel8
+  source: registry.redhat.io/openshift-logging/opa-openshift-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-redisgraph-tls-rhel8
+  source: registry.redhat.io/rhacm2/redisgraph-tls-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/ansible-automation-platform-21-hub-web-rhel8
+  source: registry.redhat.io/ansible-automation-platform-21/hub-web-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-tech-preview-submariner-rhel8-operator
+  source: registry.redhat.io/rhacm2-tech-preview/submariner-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-pipelines-pipelines-triggers-webhook-rhel8
+  source: registry.redhat.io/openshift-pipelines/pipelines-triggers-webhook-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/ubi8-openjdk-11
+  source: registry.access.redhat.com/ubi8/openjdk-11
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-gitops-1-dex-rhel8
+  source: registry.redhat.io/openshift-gitops-1/dex-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/odf4-cephcsi-rhel8
+  source: registry.redhat.io/odf4/cephcsi-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-poison-pill-manager-rhel8-operator
+  source: registry.redhat.io/openshift4/poison-pill-manager-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-registration-rhel8-operator
+  source: registry.redhat.io/rhacm2/registration-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-service-mesh-3scale-istio-adapter-rhel8
+  source: registry.redhat.io/openshift-service-mesh/3scale-istio-adapter-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhpam-7-rhpam-smartrouter-rhel8
+  source: registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-csi-external-resizer
+  source: registry.redhat.io/openshift4/ose-csi-external-resizer
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/container-native-virtualization-kubevirt-cpu-node-labeller
+  source: registry.redhat.io/container-native-virtualization/kubevirt-cpu-node-labeller
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-pipelines-pipelines-imagedigestexporter-rhel8
+  source: registry.redhat.io/openshift-pipelines/pipelines-imagedigestexporter-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/codeready-workspaces-backup-rhel8
+  source: registry.redhat.io/codeready-workspaces/backup-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/fuse7-fuse-apicurito-rhel8-operator-bundle
+  source: registry.redhat.io/fuse7/fuse-apicurito-rhel8-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/odf4-ocs-rhel8-operator
+  source: registry.redhat.io/odf4/ocs-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/amq7-amq-streams-kafka-26-rhel7
+  source: registry.redhat.io/amq7/amq-streams-kafka-26-rhel7
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-special-resource-rhel8-operator
+  source: registry.redhat.io/openshift4/special-resource-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-pipelines-pipelines-serve-tkn-cli-rhel8
+  source: registry.redhat.io/openshift-pipelines/pipelines-serve-tkn-cli-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/datagrid-datagrid-8-rhel8-operator
+  source: registry.redhat.io/datagrid/datagrid-8-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-gatekeeper-rhel8-operator
+  source: registry.redhat.io/rhacm2/gatekeeper-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/codeready-workspaces-jwtproxy-rhel8
+  source: registry.redhat.io/codeready-workspaces/jwtproxy-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-knative-rhel8-operator
+  source: registry.redhat.io/openshift-serverless-1/knative-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/ansible-automation-platform-21-controller-rhel8
+  source: registry.redhat.io/ansible-automation-platform-21/controller-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/amq7-amq-streams-kafka-27-rhel8
+  source: registry.redhat.io/amq7/amq-streams-kafka-27-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-tech-preview-eventing-sugar-controller-rhel8
+  source: registry.redhat.io/openshift-serverless-1-tech-preview/eventing-sugar-controller-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/codeready-workspaces-server-rhel8
+  source: registry.redhat.io/codeready-workspaces/server-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-elasticsearch-operator
+  source: registry.redhat.io/openshift4/ose-elasticsearch-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-tech-preview-eventing-kafka-broker-webhook-rhel8
+  source: registry.redhat.io/openshift-serverless-1-tech-preview/eventing-kafka-broker-webhook-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/container-native-virtualization-cnv-containernetworking-plugins
+  source: registry.redhat.io/container-native-virtualization/cnv-containernetworking-plugins
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-tech-preview-submariner-networkplugin-syncer-rhel8
+  source: registry.redhat.io/rhacm2-tech-preview/submariner-networkplugin-syncer-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/fuse7-fuse-console-rhel7-operator
+  source: registry.redhat.io/fuse7/fuse-console-rhel7-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-tech-preview-eventing-kafka-broker-receiver-rhel8
+  source: registry.redhat.io/openshift-serverless-1-tech-preview/eventing-kafka-broker-receiver-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-prometheus
+  source: registry.redhat.io/openshift4/ose-prometheus
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-csi-external-snapshotter-rhel8
+  source: registry.redhat.io/openshift4/ose-csi-external-snapshotter-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift3-oauth-proxy
+  source: registry.redhat.io/openshift3/oauth-proxy
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/container-native-virtualization-kubemacpool
+  source: registry.redhat.io/container-native-virtualization/kubemacpool
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/ansible-automation-platform-21-controller-rhel8-operator
+  source: registry.redhat.io/ansible-automation-platform-21/controller-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/amq7-amq-streams-kafka-28-rhel8
+  source: registry.redhat.io/amq7/amq-streams-kafka-28-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-clusterlifecycle-state-metrics-rhel8
+  source: registry.redhat.io/rhacm2/clusterlifecycle-state-metrics-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-istio-kiali-operator-metadata
+  source: registry.redhat.io/openshift-istio/kiali-operator-metadata
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-gitops-1-gitops-rhel8
+  source: registry.redhat.io/openshift-gitops-1/gitops-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-tech-preview-lighthouse-agent-rhel8
+  source: registry.redhat.io/rhacm2-tech-preview/lighthouse-agent-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/amq7-amq-broker
+  source: registry.redhat.io/amq7/amq-broker
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/migration-toolkit-virtualization-mtv-rhel8-operator
+  source: registry.redhat.io/migration-toolkit-virtualization/mtv-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-tech-preview-knative-client-plugin-event-sender-rhel8
+  source: registry.redhat.io/openshift-serverless-1-tech-preview/knative-client-plugin-event-sender-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-pipelines-tech-preview-pipelines-gcs-fetcher-rhel8
+  source: registry.redhat.io/openshift-pipelines-tech-preview/pipelines-gcs-fetcher-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-eventing-kafka-source-controller-rhel8
+  source: registry.redhat.io/openshift-serverless-1/eventing-kafka-source-controller-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-kube-rbac-proxy
+  source: registry.redhat.io/openshift4/ose-kube-rbac-proxy
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/ubi8-ubi-minimal
+  source: registry.redhat.io/ubi8/ubi-minimal
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-service-mesh-sidecar-injector-rhel8
+  source: registry.redhat.io/openshift-service-mesh/sidecar-injector-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-csi-external-snapshotter
+  source: registry.redhat.io/openshift4/ose-csi-external-snapshotter
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/amq7-amq-streams-operator-bundle
+  source: registry.redhat.io/amq7/amq-streams-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-agent-service-rhel8
+  source: registry.redhat.io/rhacm2/agent-service-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/migration-toolkit-virtualization-mtv-ui-rhel8
+  source: registry.redhat.io/migration-toolkit-virtualization/mtv-ui-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/quay-quay-rhel8
+  source: registry.redhat.io/quay/quay-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-ptp-operator
+  source: registry.redhat.io/openshift4/ose-ptp-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-volsync-rhel8
+  source: registry.redhat.io/rhacm2/volsync-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/quay-clair-rhel8
+  source: registry.redhat.io/quay/clair-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-multicluster-operators-application-rhel8
+  source: registry.redhat.io/rhacm2/multicluster-operators-application-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/amq7-amq-online-1-auth-plugin
+  source: registry.redhat.io/amq7/amq-online-1-auth-plugin
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-logging-logging-loki-rhel8
+  source: registry.redhat.io/openshift-logging/logging-loki-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/ansible-automation-platform-21-hub-rhel8-operator
+  source: registry.redhat.io/ansible-automation-platform-21/hub-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhpam-7-rhpam-businesscentral-rhel8
+  source: registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/oadp-oadp-velero-restic-restore-helper-rhel8
+  source: registry.redhat.io/oadp/oadp-velero-restic-restore-helper-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-tech-preview-eventing-webhook-rhel8
+  source: registry.redhat.io/openshift-serverless-1-tech-preview/eventing-webhook-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/container-native-virtualization-bridge-marker
+  source: registry.redhat.io/container-native-virtualization/bridge-marker
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-pipelines-pipelines-hub-db-migration-rhel8
+  source: registry.redhat.io/openshift-pipelines/pipelines-hub-db-migration-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-file-integrity-rhel8-operator
+  source: registry.redhat.io/openshift4/file-integrity-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-pipelines-pipelines-triggers-controller-rhel8
+  source: registry.redhat.io/openshift-pipelines/pipelines-triggers-controller-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/quay-quay-rhel8-operator
+  source: registry.redhat.io/quay/quay-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/integration-service-registry-infinispan-rhel8
+  source: registry.redhat.io/integration/service-registry-infinispan-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rh-sso-7-sso74-openshift-rhel8
+  source: registry.redhat.io/rh-sso-7/sso74-openshift-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/container-native-virtualization-virt-cdi-uploadserver
+  source: registry.redhat.io/container-native-virtualization/virt-cdi-uploadserver
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhscl-mongodb-36-rhel7
+  source: registry.redhat.io/rhscl/mongodb-36-rhel7
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-submariner-addon-rhel8
+  source: registry.redhat.io/rhacm2/submariner-addon-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhosdt-opentelemetry-operator-bundle
+  source: registry.redhat.io/rhosdt/opentelemetry-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/distributed-tracing-jaeger-collector-rhel8
+  source: registry.redhat.io/distributed-tracing/jaeger-collector-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/codeready-workspaces-devworkspace-controller-rhel8
+  source: registry.redhat.io/codeready-workspaces/devworkspace-controller-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/container-native-virtualization-virtio-win
+  source: registry.redhat.io/container-native-virtualization/virtio-win
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/jboss-eap-7-eap73-openjdk8-openshift-rhel7
+  source: registry.redhat.io/jboss-eap-7/eap73-openjdk8-openshift-rhel7
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-tech-preview-submariner-globalnet-rhel8
+  source: registry.redhat.io/rhacm2-tech-preview/submariner-globalnet-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-tech-preview-eventing-in-memory-channel-controller-rhel8
+  source: registry.redhat.io/openshift-serverless-1-tech-preview/eventing-in-memory-channel-controller-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-serving-queue-rhel8
+  source: registry.redhat.io/openshift-serverless-1/serving-queue-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-eventing-mtbroker-ingress-rhel8
+  source: registry.redhat.io/openshift-serverless-1/eventing-mtbroker-ingress-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhmtc-openshift-migration-ui-rhel8
+  source: registry.redhat.io/rhmtc/openshift-migration-ui-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-tech-preview-eventing-in-memory-channel-dispatcher-rhel8
+  source: registry.redhat.io/openshift-serverless-1-tech-preview/eventing-in-memory-channel-dispatcher-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/jboss-eap-7-eap74-openjdk8-openshift-rhel7
+  source: registry.redhat.io/jboss-eap-7/eap74-openjdk8-openshift-rhel7
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/edo-external-dns-rhel8-operator
+  source: registry.redhat.io/edo/external-dns-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-tech-preview-eventing-controller-rhel8
+  source: registry.redhat.io/openshift-serverless-1-tech-preview/eventing-controller-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/quay-quay-builder-rhel8
+  source: registry.redhat.io/quay/quay-builder-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhscl-php-72-rhel7
+  source: registry.redhat.io/rhscl/php-72-rhel7
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-gitops-1-kam-delivery-rhel8
+  source: registry.redhat.io/openshift-gitops-1/kam-delivery-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-multiclusterhub-repo-rhel8
+  source: registry.redhat.io/rhacm2/multiclusterhub-repo-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/fuse7-fuse-console-operator-bundle
+  source: registry.redhat.io/fuse7/fuse-console-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/fuse7-fuse-online-operator
+  source: registry.redhat.io/fuse7/fuse-online-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/jboss-webserver-5-webserver55-openjdk8-tomcat9-openshift-rhel8
+  source: registry.redhat.io/jboss-webserver-5/webserver55-openjdk8-tomcat9-openshift-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-aws-efs-csi-driver-operator-bundle
+  source: registry.redhat.io/openshift4/ose-aws-efs-csi-driver-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhmtc-openshift-migration-velero-restic-restore-helper-rhel8
+  source: registry.redhat.io/rhmtc/openshift-migration-velero-restic-restore-helper-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/ansible-automation-platform-21-ee-minimal-rhel8
+  source: registry.redhat.io/ansible-automation-platform-21/ee-minimal-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/fuse7-fuse-apicurito-rhel8-operator
+  source: registry.redhat.io/fuse7/fuse-apicurito-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/compliance-openshift-file-integrity-operator-bundle
+  source: registry.redhat.io/compliance/openshift-file-integrity-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/codeready-workspaces-configbump-rhel8
+  source: registry.redhat.io/codeready-workspaces/configbump-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-eventing-sugar-controller-rhel8
+  source: registry.redhat.io/openshift-serverless-1/eventing-sugar-controller-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-sriov-operator-must-gather
+  source: registry.redhat.io/openshift4/ose-sriov-operator-must-gather
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/amq7-amq-online-1-controller-manager-rhel7-operator-metadata
+  source: registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator-metadata
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-net-istio-webhook-rhel8
+  source: registry.redhat.io/openshift-serverless-1/net-istio-webhook-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/migration-toolkit-virtualization-mtv-operator-bundle
+  source: registry.redhat.io/migration-toolkit-virtualization/mtv-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-multicloud-manager-rhel8
+  source: registry.redhat.io/rhacm2/multicloud-manager-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-pipelines-pipelines-nop-rhel8
+  source: registry.redhat.io/openshift-pipelines/pipelines-nop-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhpam-7-rhpam-operator-bundle
+  source: registry.redhat.io/rhpam-7/rhpam-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhel8-postgresql-10
+  source: registry.redhat.io/rhel8/postgresql-10
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-search-collector-rhel8
+  source: registry.redhat.io/rhacm2/search-collector-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-cluster-kube-descheduler-operator-bundle
+  source: registry.redhat.io/openshift4/ose-cluster-kube-descheduler-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-tech-preview-eventing-apiserver-receive-adapter-rhel8
+  source: registry.redhat.io/openshift-serverless-1-tech-preview/eventing-apiserver-receive-adapter-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/distributed-tracing-jaeger-query-rhel8
+  source: registry.redhat.io/distributed-tracing/jaeger-query-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/ansible-automation-platform-21-azure-billing-rhel8-operator
+  source: registry.redhat.io/ansible-automation-platform-21/azure-billing-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/codeready-workspaces-plugin-kubernetes-rhel8
+  source: registry.redhat.io/codeready-workspaces/plugin-kubernetes-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-serving-domain-mapping-rhel8
+  source: registry.redhat.io/openshift-serverless-1/serving-domain-mapping-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/container-native-virtualization-virt-cdi-operator
+  source: registry.redhat.io/container-native-virtualization/virt-cdi-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-csi-external-resizer-rhel8
+  source: registry.redhat.io/openshift4/ose-csi-external-resizer-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-provider-credential-controller-rhel8
+  source: registry.redhat.io/rhacm2/provider-credential-controller-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/web-terminal-tech-preview-web-terminal-exec-rhel8
+  source: registry.redhat.io/web-terminal-tech-preview/web-terminal-exec-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/odf4-odf-lvm-operator-bundle
+  source: registry.redhat.io/odf4/odf-lvm-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-numaresources-rhel8-operator
+  source: registry.redhat.io/openshift4/numaresources-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-sandboxed-containers-tech-preview-osc-operator-bundle
+  source: registry.redhat.io/openshift-sandboxed-containers-tech-preview/osc-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/integration-rhi-rhel8-operator
+  source: registry.redhat.io/integration/rhi-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhel8-postgresql-13
+  source: registry.redhat.io/rhel8/postgresql-13
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/fuse7-fuse-apicurito-generator
+  source: registry.redhat.io/fuse7/fuse-apicurito-generator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-ose-sriov-network-device-plugin
+  source: registry.redhat.io/openshift4/ose-sriov-network-device-plugin
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rh-acs-scanner
+  source: registry.redhat.io/rh-acs/scanner
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-numaresources-operator-bundle
+  source: registry.redhat.io/openshift4/numaresources-operator-bundle
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/migration-toolkit-virtualization-mtv-must-gather-rhel8
+  source: registry.redhat.io/migration-toolkit-virtualization/mtv-must-gather-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/oadp-oadp-velero-plugin-for-aws-rhel8
+  source: registry.redhat.io/oadp/oadp-velero-plugin-for-aws-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/compliance-openshift-compliance-rhel8-operator
+  source: registry.redhat.io/compliance/openshift-compliance-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift4-performance-addon-operator-bundle-registry-container-rhel8
+  source: registry.redhat.io/openshift4/performance-addon-operator-bundle-registry-container-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/container-native-virtualization-virt-cdi-cloner
+  source: registry.redhat.io/container-native-virtualization/virt-cdi-cloner
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhpam-7-rhpam-kogito-rhel8-operator
+  source: registry.redhat.io/rhpam-7/rhpam-kogito-rhel8-operator
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/amq7-amq-streams-bridge-rhel8
+  source: registry.redhat.io/amq7/amq-streams-bridge-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/rhacm2-application-ui-rhel8
+  source: registry.redhat.io/rhacm2/application-ui-rhel8
+- mirrors:
+  - $BASTIONFQDN:8443/ocp-operator/openshift-serverless-1-knative-serving-rhel8-operator
+  source: registry.redhat.io/openshift-serverless-1/knative-serving-rhel8-operator

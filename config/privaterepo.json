@@ -1,0 +1,7 @@
+{
+	"auths": {
+		"$BASTIONFQDN:8443": {
+			"auth": "aW5pdDoxMjM0NTY3ODk="
+		}
+	}
+}

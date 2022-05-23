@@ -1,0 +1,29 @@
+dns-resolver:
+  config:
+    server:
+    - 192.168.8.24
+interfaces:
+- name: ens192
+  ipv4:
+    address:
+    - ip: 192.168.8.36
+      prefix-length: 24
+    dhcp: false
+    enabled: true
+  state: up
+  type: ethernet
+- name: ens224
+  state: up
+  ipv4:
+    enabled: false
+    dhcp: false
+  ipv6:
+    enabled: false
+    dhcp: false
+  type: ethernet
+routes:
+  config:
+  - destination: 0.0.0.0/0
+    next-hop-address: 192.168.8.254
+    next-hop-interface: ens192
+    table-id: 254

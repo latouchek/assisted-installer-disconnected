@@ -1,0 +1,63 @@
+#cloud-config
+
+hostname: mirror-ocp
+fqdn: mirror-ocp.ocpd.nutarh.lab
+manage_etc_hosts: false
+debug: true
+output: { all: "| tee -a /var/log/cloud-init-output.log" }
+package_upgrade: true
+users:
+  - default
+  - name: stack
+    sudo: ["ALL=(ALL) NOPASSWD:ALL"]
+    groups: wheel,adm
+    ssh_pwauth: True
+    ssh_authorized_keys:
+      - yoursshpubkey
+  - name: root
+    ssh_authorized_keys:
+      - yoursshpubkey
+ssh_pwauth: True
+disable_root: false
+chpasswd:
+  list: |
+    root:toor
+    stack:stack
+  expire: false
+growpart:
+  mode: auto
+  devices: ['/']
+  ignore_growroot_disabled: false
+runcmd:
+  - sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
+  - setenforce 0
+  - sed -i "s/console=ttyS0/edd=off,console=ttyS0/g" /etc/default/grub
+  - grub2-mkconfig -o /boot/grub2/grub.cfg
+  - dnf install epel-release dnsmasq -y 
+  - dnf update
+  - dnf config-manager --set-enabled powertools
+  - dnf install -y @container-tools
+  - dnf config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo -y
+  - dnf -y install python3-pip  tmux git jq wget terraform
+  - wget https://developers.redhat.com/content-gateway/file/pub/openshift-v4/clients/mirror-registry/1.0/mirror-registry.tar.gz -O /opt/mirror-registry.tar.gz
+  - wget https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest-4.10/openshift-client-linux.tar.gz -O /opt/openshift-client-linux.tar.gz
+  - wget https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/stable/oc-mirror.tar.gz -O /opt/oc-mirror.tar.gz
+  - cd /opt ; tar zxvf mirror-registry.tar.gz; tar zxvf openshift-client-linux.tar.gz; tar zxvf oc-mirror.tar.gz; chmod u+x  oc-mirror; mv oc oc-mirror mirror-registry kubectl  /usr/local/bin/
+  - pip install yq
+packages:
+  - wget
+  - bash-completion
+  - gzip
+  - openssl
+  - bind-utils
+  - tmux
+power_state:
+   mode: reboot
+fs_setup:
+   - label: None
+     filesystem: 'ext4'
+     device: '/dev/sdb'
+     partition: 'auto'
+mounts:
+   - [ /dev/sdb, /mirror-ocp , "ext4", "defaults,noatime"]
+mount_default_fields: [ None, None, "ext4", "defaults,noatime", "0","2" ]

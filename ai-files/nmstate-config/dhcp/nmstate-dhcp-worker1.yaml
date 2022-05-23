@@ -1,0 +1,18 @@
+dns-resolver:
+  config:
+    server:
+    - 10.42.169.68
+interfaces:
+  - name: ens3
+    type: ethernet
+    state: up
+    ipv4:
+      enabled: true
+      dhcp: true
+      auto-dns: false
+      auto-gateway: true
+      auto-routes: true
+    ipv6:
+      enabled: false
+      autoconf: true
+      dhcp: false

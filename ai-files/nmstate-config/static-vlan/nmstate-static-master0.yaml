@@ -1,0 +1,49 @@
+dns-resolver:
+  config:
+    server:
+    - 10.145.145.98
+interfaces:
+- name: eno5np0
+  state: up
+  type: ethernet
+- name: eno5np0.1100
+  state: up
+  type: vlan
+  vlan:
+    base-iface: eno5np0
+    id: 1100
+  ipv4:
+    address:
+    - ip: 10.145.145.100
+      prefix-length: 27
+    dhcp: false
+    enabled: true
+- name: eno6np1
+  state: down
+  type: ethernet
+- name: ens2f0
+  type: ethernet
+  state: down
+  ipv4:
+    enabled: false
+- name: ens2f1
+  type: ethernet
+  state: down
+  ipv4:
+    enabled: false
+- name: ens3f0
+  type: ethernet
+  state: down
+  ipv4:
+    enabled: false
+- name: ens3f1
+  type: ethernet
+  state: down
+  ipv4:
+    enabled: false
+routes:
+  config:
+  - destination: 0.0.0.0/0
+    next-hop-address: 10.145.145.97
+    next-hop-interface: eno5np0.1100
+    table-id: 254

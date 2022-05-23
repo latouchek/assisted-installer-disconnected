@@ -1,0 +1,33 @@
+dns-resolver:
+  config:
+    server:
+    - 10.145.145.97
+interfaces:
+- name: bond0 
+  description: Bond 
+  type: bond 
+  state: up 
+  ipv4: 
+    address:
+    - ip: 10.145.145.102
+      prefix-length: 27
+    enabled: true
+  link-aggregation:
+    mode: balance-rr 
+    options:
+      miimon: '140' 
+    port: 
+      - ens3
+      - ens4
+- name: ens3
+  state: up
+  type: ethernet
+- name: ens4
+  state: up
+  type: ethernet
+routes:
+  config:
+  - destination: 0.0.0.0/0
+    next-hop-address: 10.145.145.97
+    next-hop-interface: bond0
+    table-id: 254
