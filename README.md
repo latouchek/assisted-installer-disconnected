@@ -457,6 +457,100 @@ In this scenario the service and associated components are deployed onto the Bas
   ```bash
   podman logs -f assisted-installer-service
   ```
+## Part IV : using operators catalog (under construction)
+- Install oc-mirror cli
+```bash 
+wget https://mirror.openshift.com/pub/openshift-v4/amd64/clients/ocp-dev-preview/pre-release/oc-mirror.tar.gz
+tar -xvf oc-mirror.tar.gz
+chmod +x oc-mirror
+sudo mv oc-mirror /usr/local/bin/.
+```
+**oc-mirror** the single tool for all your OpenShift content mirroring needs. Creates initial mirror and keeps it updated. This cli tool offers same experience as connected customers.
+
+![image info](./pix/oc-mirror-fundamentals.png)
+- Download your [registry.redhat.io](registry.redhat.io) [pull secret from the Red Hat OpenShift Cluster Manager](https://console.redhat.com/openshift/install/pull-secret) and save it to a .json file and place at ~/.docker/config.json. This config.json file is needed to access Red Hat repositories to download container images or to create tarball.
+
+To have more information regarding oc-mirror cli you can have a look [here](https://github.com/openshift/oc-mirror). **oc-mirror** is a powerful cli tool for [Content Discovery](https://github.com/openshift/oc-mirror#content-discovery) or [Mirroring](https://github.com/openshift/oc-mirror#mirroring)
+
+###  First usecase:  
+#### we want to install RHACM in disconnected mode 
+- the most important file is the imageset-config.yaml (ImageSetConfiguration) definition. 
+```bash
+apiVersion: mirror.openshift.io/v1alpha2
+kind: ImageSetConfiguration
+mirror:
+ ocp:
+   channels:
+     - name: stable-4.10
+ operators:
+   - catalog: registry.redhat.io/redhat/redhat-operator-index:v4.10
+     headsOnly: false
+     packages:
+       - name: advanced-cluster-management
+         startingVersion: '2.4.2'
+         channels:
+           - name: 'latest'
+```
+
+
+```bash
+[root@bastion ~]# oc-mirror --config=./imageset-config.yaml file://openshift410
+INFO Creating directory: openshift410/oc-mirror-workspace/src/publish
+INFO Creating directory: openshift410/oc-mirror-workspace/src/v2
+INFO Creating directory: openshift410/oc-mirror-workspace/src/charts
+WARNING backend is not configured in ./imageset-config.yaml, using stateless mode
+INFO No metadata detected, creating new workspace
+```
+by using this command we are creating a tarball into the directory *openshift410* and when it's done we can publish the content to the mirror registry using : 
+
+```bash
+oc-mirror --from /path/to/openshift410 docker://reg.mirror.com
+```
+
+to avoid the backend WARNING we can add a *StorageConfig* section into the **ImageSetConfiguration** definition like :
+```bash
+apiVersion: mirror.openshift.io/v1alpha2
+kind: ImageSetConfiguration
+archiveSize: 1
+storageConfig:
+  local:
+    path: /home/user/workspace
+```
+
+```bash
+apiVersion: mirror.openshift.io/v1alpha2
+kind: ImageSetConfiguration
+storageConfig:
+  registry:
+    imageURL: localhost:5000/metadata:latest
+    skipTLS: true
+```
+
+Explanation of the oc-mirror process : 
+ ![image info](./pix/oc-mirror-process.png)
+
+- To keep mirror up-to-date:  **TO BE TESTED - NOT DONE YET**
+ 1. Run oc-mirror again, with the same or updated config file
+ 2. Differential mirror
+     - will only download newer OCP releases
+     - will only download newer Operator versions
+ 3. Produces new catalog images in place for seamless operator updates
+![image info](./pix/oc-mirror-update.png)
+### Second usecase: 
+#### we want to install all operators existing in our standard installation.
+**⚠** Mirroring the official Red Hat OpenShift Operators catalog (containing Red Hat OpenShift Service Mesh, Pipelines, GitOps and others) will consume more than **350GB** for the whole catalog. 
+
+OperatorHub: 3 catalogs, to use optional Operators / OpenShift Layered Products
+Red Hat Operators (3100+ images, 220+ GB)
+Certified Operators (1600+ images, 160+ GB)
+Community Operators (2160+ images, 65+ GB)
+- we have to generate the list of all operators to include them into the ImageSetConfiguration file 
+
+- when all operators are defined into ImageSetconfiguration file we have to run oc-mirror to update our mirroring repository.
+
+
+## Part V : Upgrade of the cluster (under construction)
+
 
 ### Thank you for reading
 
@@ -464,4 +558,5 @@ In this scenario the service and associated components are deployed onto the Bas
 
 - [Disconnected OpenShift Assisted Installer Service](https://kenmoini.com/post/2022/01/disconnected-openshift-assisted-installer-service/#assisted-installer-service-config)
 - <https://github.com/openshift/assisted-service>
-- [Mirror Registry](https://github.com/quay/mirror-registry)
+- [Mirror Registry](https://github.com/quay/mirror-registry) 
+- [Introducing Mirror Registry for Red Hat OpenShift](https://cloud.redhat.com/blog/introducing-mirror-registry-for-red-hat-openshift)
