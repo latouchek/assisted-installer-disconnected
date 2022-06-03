@@ -508,7 +508,7 @@ oc-mirror --from /path/to/openshift410 docker://reg.mirror.com
 ```
 
 to avoid the backend WARNING we can add a *StorageConfig* section into the **ImageSetConfiguration** definition like :
-*locally on disk
+*locally on disk*
 ```bash
 apiVersion: mirror.openshift.io/v1alpha2
 kind: ImageSetConfiguration
@@ -517,7 +517,7 @@ storageConfig:
   local:
     path: /home/user/workspace
 ```
-or directly to the repository
+or *directly to a repository*
 ```bash
 apiVersion: mirror.openshift.io/v1alpha2
 kind: ImageSetConfiguration
