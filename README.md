@@ -464,50 +464,144 @@ wget https://mirror.openshift.com/pub/openshift-v4/amd64/clients/ocp-dev-preview
 tar -xvf oc-mirror.tar.gz
 chmod +x oc-mirror
 sudo mv oc-mirror /usr/local/bin/.
+oc-mirror version
+Client Version: version.Info{Major:"", Minor:"", GitVersion:"4.11.0-202205301910.p0.g4b43175.assembly.stream-4b43175", GitCommit:"4b43175880b66615935e6817c61d43f05ce91a0e", GitTreeState:"clean", BuildDate:"2022-05-30T21:14:55Z", GoVersion:"go1.18", Compiler:"gc", Platform:"linux/amd64"}
 ```
 **oc-mirror** the single tool for all your OpenShift content mirroring needs. Creates initial mirror and keeps it updated. This cli tool offers same experience as connected customers.
 
-![image info](./pix/oc-mirror-fundamentals.png)
+
 - Download your [registry.redhat.io](registry.redhat.io) [pull secret from the Red Hat OpenShift Cluster Manager](https://console.redhat.com/openshift/install/pull-secret) and save it to a .json file and place at ~/.docker/config.json. This config.json file is needed to access Red Hat repositories to download container images or to create tarball.
 
 To have more information regarding oc-mirror cli you can have a look [here](https://github.com/openshift/oc-mirror). **oc-mirror** is a powerful cli tool for [Content Discovery](https://github.com/openshift/oc-mirror#content-discovery) or [Mirroring](https://github.com/openshift/oc-mirror#mirroring)
 
 ###  First usecase:  
 #### we want to install RHACM in disconnected mode 
-- the most important file is the imageset-config.yaml (ImageSetConfiguration) definition. 
+- The most important file is the [imageset-config.yaml](./config/imageset-config.yaml) (ImageSetConfiguration) definition. 
+**⚠** for all the test here we are using oc-mirror version **4.11.0-202205301910.p0.g4b43175.assembly.stream-4b43175** it's important because the *ImageSetConfiguration* can changed with version. You can find more information for the ImageSetConfiguration [Spec v1alpha2](https://github.com/openshift/oc-mirror/blob/main/pkg/api/v1alpha2/types_config.go)
+
 ```bash
 apiVersion: mirror.openshift.io/v1alpha2
 kind: ImageSetConfiguration
 mirror:
- ocp:
+ platform:
    channels:
      - name: stable-4.10
  operators:
    - catalog: registry.redhat.io/redhat/redhat-operator-index:v4.10
-     headsOnly: false
      packages:
        - name: advanced-cluster-management
-         startingVersion: '2.4.2'
-         channels:
-           - name: 'latest'
 ```
 
 
 ```bash
 [root@bastion ~]# oc-mirror --config=./imageset-config.yaml file://openshift410
-INFO Creating directory: openshift410/oc-mirror-workspace/src/publish
-INFO Creating directory: openshift410/oc-mirror-workspace/src/v2
-INFO Creating directory: openshift410/oc-mirror-workspace/src/charts
-WARNING backend is not configured in ./imageset-config.yaml, using stateless mode
-INFO No metadata detected, creating new workspace
+Creating directory: openshift410/oc-mirror-workspace/src/publish
+Creating directory: openshift410/oc-mirror-workspace/src/v2
+Creating directory: openshift410/oc-mirror-workspace/src/charts
+backend is not configured in ./imageset-config.yaml, using stateless mode
+backend is not configured in ./imageset-config.yaml, using stateless mode
+No metadata detected, creating new workspace
+WARN[0027] DEPRECATION NOTICE:
+Sqlite-based catalogs and their related subcommands are deprecated. Support for
+them will be removed in a future release. Please migrate your catalog workflows
+to the new file-based catalog format.
+wrote mirroring manifests to openshift410/oc-mirror-workspace/operators.1654246378/manifests-redhat-operator-index
+
+To upload local images to a registry, run:
+
+	oc adm catalog mirror file://redhat/redhat-operator-index:v4.10 REGISTRY/REPOSITORY
+
+....................
+info: Mirroring completed in 5m33.47s (75.05MB/s)
+Creating archive /root/oc-mirror/openshift410/mirror_seq1_000000.tar
+[root@mirror-ocp oc-mirror]# ls -hltr openshift410/
+total 25G
+-rw-r--r-- 1 root root 25G  3 juin  09:00 mirror_seq1_000000.tar
+drwxr-xr-x 2 root root   6  3 juin  09:00 oc-mirror-workspace
 ```
-by using this command we are creating a tarball into the directory *openshift410* and when it's done we can publish the content to the mirror registry using : 
+By using this command we are creating a tarball (mirror_seq1_000000.tar in this case) into the directory *openshift410* and when it's done we can publish the content to the mirror registry using : 
 
 ```bash
-oc-mirror --from /path/to/openshift410 docker://reg.mirror.com
+BASTIONFQDN=$(hostname -f)
+LOCAL_REGISTRY="$BASTIONFQDN:8443"
+oc-mirror --from ./openshift410 docker://$LOCAL_REGISTRY
+```
+example 
+```
+ oc-mirror --from ./openshift410 docker://$LOCAL_REGISTRY
+Checking push permissions for mirror-ocp.ocpd.nutarh.lab:8443
+Publishing image set from archive "./openshift410" to registry "mirror-ocp.ocpd.nutarh.lab:8443"
+metadata has single-use label, using stateless mode
+metadata has single-use label, using stateless mode
+mirror-ocp.ocpd.nutarh.lab:8443/
+  rhacm2/application-ui-rhel8
+    blobs:
+..................................................
+info: Mirroring completed in 3.66s (73.4MB/s)
+Wrote release signatures to oc-mirror-workspace/results-1654246874
+Rendering catalog image "mirror-ocp.ocpd.nutarh.lab:8443/redhat/redhat-operator-index:v4.10" with file-based catalog
+Wrote CatalogSource manifests to oc-mirror-workspace/results-1654247712
+Wrote ICSP manifests to oc-mirror-workspace/results-1654247712
+[root@mirror-ocp results-1654247712]# pwd
+/root/oc-mirror/oc-mirror-workspace/results-1654247712
+[root@mirror-ocp results-1654247712]# ls -ltr
+total 68
+-rw-r--r-- 1 root root 59914  3 juin  09:15 mapping.txt
+-rwxr-xr-x 1 root root   238  3 juin  09:15 catalogSource-redhat-operator-index.yaml
+-rwxr-xr-x 1 root root   981  3 juin  09:15 imageContentSourcePolicy.yaml
+[root@mirror-ocp results-1654247712]# cat catalogSource-redhat-operator-index.yaml
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  name: redhat-operator-index
+  namespace: openshift-marketplace
+spec:
+  image: mirror-ocp.ocpd.nutarh.lab:8443/redhat/redhat-operator-index:v4.10
+  sourceType: grpc
+[root@mirror-ocp results-1654247712]# cat imageContentSourcePolicy.yaml
+---
+apiVersion: operator.openshift.io/v1alpha1
+kind: ImageContentSourcePolicy
+metadata:
+  labels:
+    operators.openshift.org/catalog: "true"
+  name: operator-0
+spec:
+  repositoryDigestMirrors:
+  - mirrors:
+    - mirror-ocp.ocpd.nutarh.lab:8443/rhacm2
+    source: registry.redhat.io/rhacm2
+  - mirrors:
+    - mirror-ocp.ocpd.nutarh.lab:8443/redhat
+    source: registry.redhat.io/redhat
+  - mirrors:
+    - mirror-ocp.ocpd.nutarh.lab:8443/openshift4
+    source: registry.redhat.io/openshift4
+  - mirrors:
+    - mirror-ocp.ocpd.nutarh.lab:8443/rhel8
+    source: registry.redhat.io/rhel8
+---
+apiVersion: operator.openshift.io/v1alpha1
+kind: ImageContentSourcePolicy
+metadata:
+  name: release-0
+spec:
+  repositoryDigestMirrors:
+  - mirrors:
+    - mirror-ocp.ocpd.nutarh.lab:8443/openshift/release-images
+    source: quay.io/openshift-release-dev/ocp-release
+  - mirrors:
+    - mirror-ocp.ocpd.nutarh.lab:8443/openshift/release
+    source: quay.io/openshift-release-dev/ocp-v4.0-art-dev
+```
+You have to execute the 2 files generated on top of your OCP cluster using :
+```bash
+oc apply -f imageContentSourcePolicy.yaml
+oc apply -f catalogSource-redhat-operator-index.yaml
 ```
 
-to avoid the backend WARNING we can add a *StorageConfig* section into the **ImageSetConfiguration** definition like :
+### Additionnal informations
+- To avoid the backend WARNING we can add a *StorageConfig* section into the **ImageSetConfiguration** definition like :
 *locally on disk*
 ```bash
 apiVersion: mirror.openshift.io/v1alpha2
@@ -526,9 +620,26 @@ storageConfig:
     imageURL: localhost:5000/metadata:latest
     skipTLS: true
 ```
+Here a [ImageSetConfiguration.yaml](./config/imageset-config-repos.yaml) ) file pushing directly the content to the target repository.
+Example
+```bash
+[root@mirror-ocp oc-mirror]# oc-mirror --config ./imageset-config-repos.yaml docker://$LOCAL_REGISTRY
+Checking push permissions for mirror-ocp.ocpd.nutarh.lab:8443
+Found: oc-mirror-workspace/src/publish
+Found: oc-mirror-workspace/src/v2
+Found: oc-mirror-workspace/src/charts
+No metadata detected, creating new workspace
+WARN[0021] DEPRECATION NOTICE:
+Sqlite-based catalogs and their related subcommands are deprecated. Support for
+them will be removed in a future release. Please migrate your catalog workflows
+to the new file-based catalog format.
+wrote mirroring manifests to oc-mirror-workspace/operators.1654249214/manifests-redhat-operator-index
 
-Explanation of the oc-mirror process : 
- ![image info](./pix/oc-mirror-process.png)
+To upload local images to a registry, run:
+
+	oc adm catalog mirror file://redhat/redhat-operator-index:v4.10 REGISTRY/REPOSITORY
+```
+
 
 - To keep mirror up-to-date:  **TO BE TESTED - NOT DONE YET**
  1. Run oc-mirror again, with the same or updated config file
@@ -536,7 +647,7 @@ Explanation of the oc-mirror process :
      - will only download newer OCP releases
      - will only download newer Operator versions
  3. Produces new catalog images in place for seamless operator updates
-![image info](./pix/oc-mirror-update.png)
+
 ### Second usecase: 
 #### we want to install all operators existing in our standard installation.
 **⚠** Mirroring the official Red Hat OpenShift Operators catalog (containing Red Hat OpenShift Service Mesh, Pipelines, GitOps and others) will consume more than **350GB** for the whole catalog. 
