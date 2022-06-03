@@ -622,7 +622,7 @@ storageConfig:
 ```
 Here a [ImageSetConfiguration.yaml](./config/imageset-config-repos.yaml) file pushing directly the content to the target repository.
 Example
-```bash
+```
 [root@mirror-ocp oc-mirror]# oc-mirror --config ./imageset-config-repos.yaml docker://$LOCAL_REGISTRY
 Checking push permissions for mirror-ocp.ocpd.nutarh.lab:8443
 Found: oc-mirror-workspace/src/publish
@@ -649,8 +649,22 @@ Wrote ICSP manifests to oc-mirror-workspace/results-1654249528
 ```
 
 
-- To keep mirror up-to-date:  **TO BE TESTED - NOT DONE YET**
+- To keep mirror up-to-date: 
  1. Run oc-mirror again, with the same or updated config file
+ - List updates since last run for releases and operators
+```bash
+oc-mirror list updates imageset-config-repos.yaml
+```
+
+Example
+ ```
+ [root@mirror-ocp oc-mirror]# oc-mirror list updates imageset-config-repos.yaml
+Listing update for release channel:  stable-4.10
+Architecture:                        amd64
+4.10.15
+.........................
+No updates found for catalog registry.redhat.io/redhat/redhat-operator-index:v4.10
+```
  2. Differential mirror
      - will only download newer OCP releases
      - will only download newer Operator versions
