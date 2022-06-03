@@ -526,7 +526,9 @@ BASTIONFQDN=$(hostname -f)
 LOCAL_REGISTRY="$BASTIONFQDN:8443"
 oc-mirror --from ./openshift410 docker://$LOCAL_REGISTRY
 ```
-example 
+
+Example 
+
 ```
  oc-mirror --from ./openshift410 docker://$LOCAL_REGISTRY
 Checking push permissions for mirror-ocp.ocpd.nutarh.lab:8443
@@ -594,7 +596,9 @@ spec:
     - mirror-ocp.ocpd.nutarh.lab:8443/openshift/release
     source: quay.io/openshift-release-dev/ocp-v4.0-art-dev
 ```
+
 You have to execute the 2 files generated on top of your OCP cluster using :
+
 ```bash
 oc apply -f imageContentSourcePolicy.yaml
 oc apply -f catalogSource-redhat-operator-index.yaml
@@ -603,6 +607,7 @@ oc apply -f catalogSource-redhat-operator-index.yaml
 ### Additionnal informations
 - To avoid the backend WARNING we can add a *StorageConfig* section into the **ImageSetConfiguration** definition like :
 *locally on disk*
+
 ```bash
 apiVersion: mirror.openshift.io/v1alpha2
 kind: ImageSetConfiguration
@@ -611,7 +616,9 @@ storageConfig:
   local:
     path: /home/user/workspace
 ```
+
 or *directly to a repository*
+
 ```bash
 apiVersion: mirror.openshift.io/v1alpha2
 kind: ImageSetConfiguration
@@ -622,7 +629,8 @@ storageConfig:
 ```
 Here a [ImageSetConfiguration.yaml](./config/imageset-config-repos.yaml) file pushing directly the content to the target repository.
 Example
-```
+
+```bash
 [root@mirror-ocp oc-mirror]# oc-mirror --config ./imageset-config-repos.yaml docker://$LOCAL_REGISTRY
 Checking push permissions for mirror-ocp.ocpd.nutarh.lab:8443
 Found: oc-mirror-workspace/src/publish
@@ -652,19 +660,58 @@ Wrote ICSP manifests to oc-mirror-workspace/results-1654249528
 - To keep mirror up-to-date: 
  1. Run oc-mirror again, with the same or updated config file
  - List updates since last run for releases and operators
+
 ```bash
 oc-mirror list updates imageset-config-repos.yaml
 ```
 
 Example
- ```
- [root@mirror-ocp oc-mirror]# oc-mirror list updates imageset-config-repos.yaml
+
+```bash
+oc-mirror list updates imageset-config-repos.yaml
 Listing update for release channel:  stable-4.10
 Architecture:                        amd64
 4.10.15
-.........................
+...............................................................................
 No updates found for catalog registry.redhat.io/redhat/redhat-operator-index:v4.10
 ```
+
+Now I'm using a new [ImageSetConfiguration.yaml](./config/imageset-config-new.yaml) file (imageset-config-new.yaml) in which I added the operator RHACS.
+
+```bash
+oc-mirror --config ./imageset-config-new.yaml docker://$LOCAL_REGISTRY
+....................................................................................................................
+sha256:ff3a43f36b3cef242ec51bf100e8960289db7bbfb433f3a505e092f09de62bae mirror-ocp.ocpd.nutarh.lab:8443/openshift4/ose-kube-rbac-proxy:65f4df2e
+info: Mirroring completed in 4m3.36s (81.6MB/s)
+Rendering catalog image "mirror-ocp.ocpd.nutarh.lab:8443/redhat/redhat-operator-index:v4.10" with file-based catalog
+Wrote CatalogSource manifests to oc-mirror-workspace/results-1654252147
+Wrote ICSP manifests to oc-mirror-workspace/results-1654252147
+```
+
+Inside the oc-mirror-workspace/results-1654252147 we can see the Content of the file imageContentSourcePolicy.yaml contains a section with RHACS operator (**rh-acs**) now. This file as to be applied on the OCP cluster to use it.
+
+```bash
+apiVersion: operator.openshift.io/v1alpha1
+kind: ImageContentSourcePolicy
+metadata:
+  labels:
+    operators.openshift.org/catalog: "true"
+  name: operator-0
+spec:
+  repositoryDigestMirrors:
+  - mirrors:
+    - mirror-ocp.ocpd.nutarh.lab:8443/redhat
+    source: registry.redhat.io/redhat
+  - mirrors:
+    - mirror-ocp.ocpd.nutarh.lab:8443/rh-acs
+    source: registry.redhat.io/rh-acs
+  - mirrors:
+    - mirror-ocp.ocpd.nutarh.lab:8443/advanced-cluster-security
+    source: registry.redhat.io/advanced-cluster-security
+  - mirrors:
+    - mirror-ocp.ocpd.nutarh.lab:8443/openshift4
+```
+
  2. Differential mirror
      - will only download newer OCP releases
      - will only download newer Operator versions
@@ -681,6 +728,127 @@ Community Operators (2160+ images, 65+ GB)
 - we have to generate the list of all operators to include them into the ImageSetConfiguration file 
 
 - when all operators are defined into ImageSetconfiguration file we have to run oc-mirror to update our mirroring repository.
+
+
+
+- List all available catalogs for a version of OpenShift
+```bash
+[root@mirror-ocp oc-mirror]# oc-mirror list operators --catalogs --version=4.10
+Available OpenShift OperatorHub catalogs:
+OpenShift 4.10:
+registry.redhat.io/redhat/redhat-operator-index:v4.10
+registry.redhat.io/redhat/certified-operator-index:v4.10
+registry.redhat.io/redhat/community-operator-index:v4.10
+registry.redhat.io/redhat/redhat-marketplace-index:v4.10
+```
+
+- List all available packages in a catalog - here we selected registry.redhat.io/redhat/redhat-operator-index:v4.10
+
+```bash
+oc-mirror list operators --catalog=registry.redhat.io/redhat/redhat-operator-index:v4.10
+NAME                                    DISPLAY NAME                                             DEFAULT CHANNEL
+3scale-operator                         Red Hat Integration - 3scale                             threescale-2.11
+advanced-cluster-management             Advanced Cluster Management for Kubernetes               release-2.4
+amq-broker-rhel8                        Red Hat Integration - AMQ Broker for RHEL 8 (Multiarch)  7.x
+amq-online                              Red Hat Integration - AMQ Online                         stable
+amq-streams                             Red Hat Integration - AMQ Streams                        stable
+amq7-interconnect-operator              Red Hat Integration - AMQ Interconnect                   1.10.x
+ansible-automation-platform-operator    Ansible Automation Platform                              stable-2.2-cluster-scoped
+ansible-cloud-addons-operator           Ansible Cloud Addons                                     stable-2.2-cluster-scoped
+apicast-operator                        Red Hat Integration - 3scale APIcast gateway             threescale-2.11
+aws-efs-csi-driver-operator             AWS EFS CSI Driver Operator                              stable
+businessautomation-operator             Business Automation                                      stable
+cincinnati-operator                     OpenShift Update Service                                 v1
+cluster-kube-descheduler-operator       Kube Descheduler Operator                                stable
+cluster-logging                         Red Hat OpenShift Logging                                stable
+clusterresourceoverride                 ClusterResourceOverride Operator                         stable
+codeready-workspaces                    Red Hat CodeReady Workspaces                             latest
+codeready-workspaces2                   Red Hat CodeReady Workspaces - Technical Preview         tech-preview-latest-all-namespaces
+compliance-operator                     Compliance Operator                                      release-0.1
+container-security-operator             Red Hat Quay Container Security Operator                 stable-3.7
+costmanagement-metrics-operator         Cost Management Metrics Operator                         stable
+cryostat-operator                       Cryostat Operator                                        stable
+datagrid                                Data Grid                                                8.3.x
+devworkspace-operator                   DevWorkspace Operator                                    fast
+dpu-network-operator                    DPU Network Operator                                     stable
+eap                                     JBoss EAP                                                stable
+elasticsearch-operator                  OpenShift Elasticsearch Operator                         stable
+external-dns-operator                   ExternalDNS Operator                                     alpha
+file-integrity-operator                 File Integrity Operator                                  release-0.1
+fuse-apicurito                          Red Hat Integration - API Designer                       fuse-apicurito-7.10.x
+fuse-console                            Red Hat Integration - Fuse Console                       7.10.x
+fuse-online                             Red Hat Integration - Fuse Online                        7.10.x
+gatekeeper-operator-product             Gatekeeper Operator                                      stable
+idp-mgmt-operator-product               identity configuration management for Kubernetes         alpha
+integration-operator                    Red Hat Integration                                      1.x
+jaeger-product                          Red Hat OpenShift distributed tracing platform           stable
+jws-operator                            JBoss Web Server Operator                                alpha
+kiali-ossm                              Kiali Operator                                           stable
+klusterlet-product                      Klusterlet                                               release-2.4
+kubernetes-nmstate-operator             Kubernetes NMState Operator                              stable
+kubevirt-hyperconverged                 OpenShift Virtualization                                 stable
+local-storage-operator                  Local Storage                                            stable
+loki-operator                           Loki Operator                                            candidate
+mcg-operator                            NooBaa Operator                                          stable-4.10
+metallb-operator                        MetalLB Operator                                         stable
+mtc-operator                            Migration Toolkit for Containers Operator                release-v1.7
+mtv-operator                            Migration Toolkit for Virtualization Operator            release-v2.3
+nfd                                     Node Feature Discovery Operator                          stable
+node-healthcheck-operator               Node Health Check Operator                               candidate
+node-maintenance-operator               Node Maintenance Operator                                stable
+numaresources-operator                  numaresources-operator                                   4.10
+ocs-operator                            OpenShift Container Storage                              stable-4.10
+odf-csi-addons-operator                 CSI Addons                                               stable-4.10
+odf-lvm-operator                        ODF LVM Operator                                         stable-4.10
+odf-multicluster-orchestrator           ODF Multicluster Orchestrator                            stable-4.10
+odf-operator                            OpenShift Data Foundation                                stable-4.10
+odr-cluster-operator                    Openshift DR Cluster Operator                            stable-4.10
+odr-hub-operator                        Openshift DR Hub Operator                                stable-4.10
+openshift-cert-manager-operator         cert-manager Operator for Red Hat OpenShift              tech-preview
+openshift-gitops-operator               Red Hat OpenShift GitOps                                 latest
+openshift-pipelines-operator-rh         Red Hat OpenShift Pipelines                              pipelines-1.7
+openshift-secondary-scheduler-operator  Secondary Scheduler Operator for Red Hat OpenShift       stable
+openshift-special-resource-operator     Special Resource Operator                                stable
+opentelemetry-product                   Red Hat OpenShift distributed tracing data collection    stable
+performance-addon-operator              Performance Addon Operator                               4.10
+poison-pill-manager                     Poison Pill Operator                                     stable
+ptp-operator                            PTP Operator                                             stable
+quay-bridge-operator                    Red Hat Quay Bridge Operator                             stable-3.7
+quay-operator                           Red Hat Quay                                             stable-3.7
+red-hat-camel-k                         Red Hat Integration - Camel K                            1.6.x
+redhat-oadp-operator                    OADP Operator                                            stable-1.0
+rh-service-binding-operator             Service Binding Operator                                 stable
+rhacs-operator                          Advanced Cluster Security for Kubernetes                 latest
+rhpam-kogito-operator                   RHPAM Kogito Operator                                    7.x
+rhsso-operator                          Red Hat Single Sign-On Operator                          stable
+sandboxed-containers-operator           OpenShift sandboxed containers Operator                  stable-1.2
+serverless-operator                     Red Hat OpenShift Serverless                             stable
+service-registry-operator               Red Hat Integration - Service Registry Operator          2.0.x
+servicemeshoperator                     Red Hat OpenShift Service Mesh                           stable
+skupper-operator                        Skupper                                                  alpha
+sriov-network-operator                  SR-IOV Network Operator                                  stable
+submariner                              Submariner                                               alpha-0.11
+tang-operator                           Tang                                                     0.0.24
+vertical-pod-autoscaler                 VerticalPodAutoscaler                                    stable
+web-terminal                            Web Terminal                                             fast
+windows-machine-config-operator         Windows Machine Config Operator                          stable
+```
+
+
+- To generate the list of all redhat operators 
+
+```bash
+oc-mirror list operators --catalog=registry.redhat.io/redhat/redhat-operator-index:v4.10 | awk '{ print $1 }'| awk 'NR!=1 {print}' |awk '{print "       - name: "$0}' > list-redhat-operators.lst
+```
+To see the content of [list-redhat-operators.lst](./config/list-redhat-operators.lst). 
+By using a template of [ImageSetConfiguration.yaml](./config/ImageSetConfig-template.yaml) we can concatenate the result of the list-redhat-operators.lst with this template. 
+
+```bash
+cat ImageSetConfig-template.yaml list-redhat-operators.lst > imageset-config-operator-redhat.yaml
+```
+
+A example of the [imageset-config-operator-redhat.yaml](./config/imageset-config-operator-redhat.yaml) generated.
+
 
 
 ## Part V :  Cluster upgrade (under construction)
