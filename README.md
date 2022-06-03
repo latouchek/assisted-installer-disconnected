@@ -457,7 +457,7 @@ In this scenario the service and associated components are deployed onto the Bas
   ```bash
   podman logs -f assisted-installer-service
   ```
-## Part IV : using operators catalog (under construction)
+## Part IV : using operators catalog 
 - Install oc-mirror cli
 ```bash 
 wget https://mirror.openshift.com/pub/openshift-v4/amd64/clients/ocp-dev-preview/pre-release/oc-mirror.tar.gz
@@ -620,7 +620,7 @@ storageConfig:
     imageURL: localhost:5000/metadata:latest
     skipTLS: true
 ```
-Here a [ImageSetConfiguration.yaml](./config/imageset-config-repos.yaml) ) file pushing directly the content to the target repository.
+Here a [ImageSetConfiguration.yaml](./config/imageset-config-repos.yaml) file pushing directly the content to the target repository.
 Example
 ```bash
 [root@mirror-ocp oc-mirror]# oc-mirror --config ./imageset-config-repos.yaml docker://$LOCAL_REGISTRY
@@ -638,6 +638,14 @@ wrote mirroring manifests to oc-mirror-workspace/operators.1654249214/manifests-
 To upload local images to a registry, run:
 
 	oc adm catalog mirror file://redhat/redhat-operator-index:v4.10 REGISTRY/REPOSITORY
+  ......................
+  sha256:027910b90e729e1d0ac1f80ebfbc46ea89543e1178f95b5874dc80712eccef30 mirror-ocp.ocpd.nutarh.lab:8443/rhacm2/memcached-rhel8:810785da
+sha256:8c3ad6b0170ad3aae144559e751a7651abeec4e031087c96a6bbde8a3786b646 mirror-ocp.ocpd.nutarh.lab:8443/rhacm2/cluster-curator-controller-rhel8:eb447859
+sha256:10b845928340678ab6500b2919c960e5b04d7a67ebe28d0dfe3309eb53c903b8 mirror-ocp.ocpd.nutarh.lab:8443/rhacm2/clusterclaims-controller-rhel8:546946e1
+info: Mirroring completed in 5.27s (0B/s)
+Rendering catalog image "mirror-ocp.ocpd.nutarh.lab:8443/redhat/redhat-operator-index:v4.10" with file-based catalog
+Wrote CatalogSource manifests to oc-mirror-workspace/results-1654249528
+Wrote ICSP manifests to oc-mirror-workspace/results-1654249528
 ```
 
 
@@ -648,7 +656,7 @@ To upload local images to a registry, run:
      - will only download newer Operator versions
  3. Produces new catalog images in place for seamless operator updates
 
-### Second usecase: 
+### Second usecase: (under construction)
 #### we want to install all operators existing in our standard installation.
 **⚠** Mirroring the official Red Hat OpenShift Operators catalog (containing Red Hat OpenShift Service Mesh, Pipelines, GitOps and others) will consume more than **350GB** for the whole catalog. 
 
@@ -661,7 +669,7 @@ Community Operators (2160+ images, 65+ GB)
 - when all operators are defined into ImageSetconfiguration file we have to run oc-mirror to update our mirroring repository.
 
 
-## Part V : Upgrade of the cluster (under construction)
+## Part V :  Cluster upgrade (under construction)
 
 
 ### Thank you for reading
