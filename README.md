@@ -849,7 +849,9 @@ cat ImageSetConfig-template.yaml list-redhat-operators.lst > imageset-config-ope
 
 A example of the [imageset-config-operator-redhat.yaml](./config/imageset-config-operator-redhat.yaml) generated.
 
-
+- To generate the list of all operators available with the version 4.10 
+I created a shell script called [list-operators.sh](./config/list-operators/list-operators.sh), it will generate the list of all [operators](./config/list-operators/imageset-config-all-operators.yaml) and it will upload all images inside the mirror registry.
+ 
 
 ## Part V :  Cluster upgrade (under construction)
 

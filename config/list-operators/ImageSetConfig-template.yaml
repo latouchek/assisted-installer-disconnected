@@ -1,0 +1,12 @@
+apiVersion: mirror.openshift.io/v1alpha2
+kind: ImageSetConfiguration
+storageConfig:
+  registry:
+    imageURL: mirror-ocp.ocpd.nutarh.lab:8443/openshift
+    skipTLS: false
+mirror:
+ platform:
+   channels:
+     - name: stable-4.10
+       type: ocp
+ operators:
