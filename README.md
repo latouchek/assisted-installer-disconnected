@@ -895,11 +895,12 @@ oc create -f signature-sha256-ddcb70ce04a01ce4.json
 
 - Upgrade the target **Openshift Cluster** to the new version using the oc adm upgrade command like :  
 ```bash 
-oc adm upgrade --allow-explicit-upgrade --to-image <quay.io/>
-````
+oc adm upgrade --allow-explicit-upgrade --to-image quay.io/openshift-release-dev/ocp-release@<SHA-SIGNATURE>
 
-### Thank you for reading
+Example
 
+oc adm upgrade --allow-explicit-upgrade --to-image quay.io/openshift-release-dev/ocp-release@sha256-ddcb70ce04a01ce487c0f4ad769e9e36a10c8c832a34307c1b1eb8e03a5b7ddb
+```
 ## References
 
 - [Disconnected OpenShift Assisted Installer Service](https://kenmoini.com/post/2022/01/disconnected-openshift-assisted-installer-service/#assisted-installer-service-config)
