@@ -907,3 +907,5 @@ oc adm upgrade --allow-explicit-upgrade --to-image quay.io/openshift-release-dev
 - <https://github.com/openshift/assisted-service>
 - [Mirror Registry](https://github.com/quay/mirror-registry) 
 - [Introducing Mirror Registry for Red Hat OpenShift](https://cloud.redhat.com/blog/introducing-mirror-registry-for-red-hat-openshift)
+- [Updating a restricted network cluster](https://docs.openshift.com/container-platform/4.10/updating/updating-restricted-network-cluster.html)
+- [Using Operator Lifecycle Manager on restricted networks](https://docs.openshift.com/container-platform/4.10/operators/admin/olm-restricted-networks.html#olm-restricted-networks)
