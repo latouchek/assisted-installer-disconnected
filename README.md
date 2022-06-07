@@ -851,10 +851,52 @@ A example of the [imageset-config-operator-redhat.yaml](./config/imageset-config
 
 - To generate the list of all operators available with the version 4.10 
 I created a shell script called [list-operators.sh](./config/list-operators/list-operators.sh), it will generate the list of all [operators](./config/list-operators/imageset-config-all-operators.yaml) and it will upload all images inside the mirror registry.
- 
+
+Note: from [operators](./config/list-operators/imageset-config-all-operators.yaml) file I deleted this operator :        
+```bash 
+- name: fujitsu-enterprise-postgres-operator
+```
+it generated error with the container image.
+
+I removed the section relative to the **marketplace** (redhat-marketplace-index) I don't have access 
+
+```bash
+catalog registry.redhat.io/redhat/redhat-marketplace-index:v4.10: failed to authorize: failed to fetch anonymous token: unexpected status: 401 Unauthorized
+```
+
+Same for the **community-operators** (community-operator-index ). 
+The final file used is [operators](./config/list-operators/imageset-config-all-operators-v2.yaml)
 
 ## Part V :  Cluster upgrade (under construction)
 
+- [Openshift Update Graph](https://ctron.github.io/openshift-update-graph/#stable-4.10)
+
+
+- Mirror the new Openshift version to your mirror registry using oc-mirror
+
+
+
+- check the signature into ./oc-mirror-workspace/src/release-signatures directory. 
+```bash
+[root@mirror-ocp release-signatures]# pwd
+/root/oc-mirror/list-operators/oc-mirror-workspace/src/release-signatures
+[root@mirror-ocp release-signatures]# ls -ltr
+total 4
+-rw-r----- 1 root root 1540  7 juin  13:40 signature-sha256-ddcb70ce04a01ce4.json
+[root@mirror-ocp release-signatures]#[root@mirror-ocp release-signatures]# cat signature-sha256-ddcb70ce04a01ce4.json
+{"kind":"ConfigMap","apiVersion":"v1","metadata":{"name":"sha256-ddcb70ce04a01ce487c0f4ad769e9e36a10c8c832a34307c1b1eb8e03a5b7ddb","namespace":"openshift-config-managed","creationTimestamp":null,"labels":{"release.openshift.io/verification-signatures":""}},"binaryData":{"sha256-ddcb70ce04a01ce487c0f4ad769e9e36a10c8c832a34307c1b1eb8e03a5b7ddb-1":"owGbwMvMwMEoOU9/4l9n2UDGtYwpSWLxRQW5xZnpukWphbrO/gERvlF6SZl5SU1em6uVkosySzKTE3OUrBSqlTJzE9NTwayU/OTs1CLd3MS8zLTU4hLdlMx0IAWUUirOSDQyNbNKSUlOMjdITjUwSTQwTE41sTBPNkgzSUwxN7NMtUw1Nks0NEi2SLYwNko0NjE2ME82TDJMTbJINTBONE0yT0lJUqrVUVAqqSwAWaeUWJKfm5mskJyfV5KYmZdapAB0bV5iSWlRqhJQVWZKal5JZkklssOKUtNSi1LzksHaC0sTK/Uy8/XzC1LzijMy00qA0jmpicWpuimpZfr5yQUwvpWJnqGBnqGpboWFWbyZiVItyBH5BSWZ+XnQEEguSgU6pghkalBqioJHYomCP9DU
+..........................................
+```
+
+- on your Openshift cluster target import the signature 
+```bash
+oc create -f signature-sha256-ddcb70ce04a01ce4.json
+```
+
+- Upgrade the target Openshift cluster to the new version  
+```bash 
+oc adm upgrade --allow-explicit-upgrade --to-image <quay.io/>
+````
 
 ### Thank you for reading
 
