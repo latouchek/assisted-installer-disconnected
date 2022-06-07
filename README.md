@@ -888,12 +888,12 @@ total 4
 ..........................................
 ```
 
-- on your Openshift cluster target import the signature 
+- on your **Openshift Cluster Target** import the signature 
 ```bash
 oc create -f signature-sha256-ddcb70ce04a01ce4.json
 ```
 
-- Upgrade the target Openshift cluster to the new version  
+- Upgrade the target **Openshift Cluster** to the new version using the oc adm upgrade command like :  
 ```bash 
 oc adm upgrade --allow-explicit-upgrade --to-image <quay.io/>
 ````
