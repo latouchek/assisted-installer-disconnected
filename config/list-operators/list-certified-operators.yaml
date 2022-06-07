@@ -1,0 +1,2 @@
+   - catalog: registry.redhat.io/redhat/certified-operator-index:v4.10
+     packages:

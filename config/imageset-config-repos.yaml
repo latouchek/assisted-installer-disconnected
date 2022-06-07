@@ -1,0 +1,15 @@
+apiVersion: mirror.openshift.io/v1alpha2
+kind: ImageSetConfiguration
+storageConfig:
+  registry:
+    imageURL: $LOCAL_REGISTRY/openshift
+    skipTLS: false
+mirror:
+ platform:
+   channels:
+     - name: stable-4.10
+       type: ocp
+ operators:
+   - catalog: registry.redhat.io/redhat/redhat-operator-index:v4.10
+     packages:
+       - name: advanced-cluster-management
