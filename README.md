@@ -24,7 +24,7 @@ In this post we describe how to deploy OCP4 on **IaaS/bare metal**  in partially
 
     ```bash
     BASTIONFQDN=$(hostname -f)
-    wget https://developers.redhat.com/content-gateway/file/pub/openshift-v4/clients/mirror-registry/1.0/mirror-registry.tar.gz -O /opt/mirror-registry/mirror-registry.tar.gz
+    wget https://developers.redhat.com/content-gateway/rest/mirror/pub/openshift-v4/clients/mirror-registry/latest/mirror-registry.tar.gz -O /opt/mirror-registry/mirror-registry.tar.gz
     cd  /opt/mirror-registry
     tar zxvf mirror-registry.tar.gz
     quayRoot='/mirror-ocp/quay'
